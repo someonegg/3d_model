@@ -1,0 +1,11 @@
+{
+  "excluded_directories": [
+    "node_modules",
+    "viewer",
+    "tools",
+    "tests",
+    "tmp",
+    "dist",
+    "docs"
+  ]
+}

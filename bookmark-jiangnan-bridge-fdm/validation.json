@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "model": "bookmark-jiangnan-bridge-fdm",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "0263479c53979c2281080cee37b8add8b91130599c2636241e841e666c573d5c",
+      "dimensions": [
+        45.0,
+        150.0,
+        1.3200000524520874
+      ],
+      "triangles": 607800,
+      "bytes": 30390084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 6805.6152038125265,
+      "component_volumes": [
+        6805.615203812529
+      ],
+      "passed": true,
+      "file": "bookmark-jiangnan-bridge-fdm.stl",
+      "resources": {
+        "bookmark-jiangnan-bridge-fdm.stl": "0263479c53979c2281080cee37b8add8b91130599c2636241e841e666c573d5c"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "bookmark-jiangnan-bridge-fdm.stl"
+    ]
+  },
+  "inputs": {
+    "build.py": "d9f268bd85256d53e4a9af71fb2cea64b0e11ff99a7a7b56dde331d35041cd63",
+    "../tools/bookmark_relief.py": "170d3e338c102d8490293d0ccea6dd980f5f854bde169d8b0143d2c74c0407dc",
+    "source.png": "c0902c97e83ff3fc840d1cf3644dd1800c7b97098b28c31cea99666ab987b11e",
+    "parameters.json": "44ffa1e9a823949978d7c2506bba21e838f3e367e837f1d300749a0c98dd014f"
+  }
+}

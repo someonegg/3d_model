@@ -1,0 +1,28 @@
+{
+  "name": "model-workbench",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "models:build": "node tools/python.mjs build",
+    "models:validate": "node tools/python.mjs validate",
+    "build": "node tools/python.mjs site && tsc --noEmit && vite build && node tools/python.mjs publish",
+    "preview": "vite preview --outDir ../dist --host 127.0.0.1",
+    "test": "node tools/python.mjs test",
+    "test:e2e": "node tools/python.mjs fixtures && npm run build && playwright test",
+    "check": "tsc --noEmit && tsc --noEmit -p tsconfig.tests.json",
+    "format": "prettier --write \"viewer/**/*.{ts,css,html}\" \"tools/*.mjs\" \"tests/browser/*.ts\" \"*.{json,mjs,ts}\" \"tools/*.json\"",
+    "format:check": "prettier --check \"viewer/**/*.{ts,css,html}\" \"tools/*.mjs\" \"tests/browser/*.ts\" \"*.{json,mjs,ts}\" \"tools/*.json\""
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "22.20.2",
+    "@types/three": "0.180.0",
+    "prettier": "3.9.6",
+    "typescript": "5.9.2",
+    "vite": "7.3.6"
+  }
+}
