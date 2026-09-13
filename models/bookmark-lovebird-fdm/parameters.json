@@ -1,0 +1,8 @@
+{
+  "tone_values": [0, 25.5, 51, 76.5, 102, 127.5, 153, 178.5, 204, 229.5, 255],
+  "nozzle_mm": 0.4,
+  "first_layer_mm": 0.2,
+  "layer_mm": 0.08,
+  "base_mm": 0.52,
+  "white_start_layer": 6
+}

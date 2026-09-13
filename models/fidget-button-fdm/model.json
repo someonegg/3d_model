@@ -1,0 +1,28 @@
+{
+  "id": "fidget-button-fdm",
+  "name": "解压按键 · FDM",
+  "description": "仅用 PLA 打印的轻触手持按键；分件装配，可更换弹片",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "all-parts",
+      "name": "全部零件 · 打印排版",
+      "file": "fidget-button-fdm.stl"
+    },
+    {
+      "id": "replacement-spring",
+      "name": "备用弹片",
+      "file": "fidget-button-fdm-spring.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "verify": "src/verify.py",
+  "inputs": [
+    "src/build.py",
+    "src/verify.py"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "print_parts": 52,
+  "scale": 24,
+  "body_length_mm": 196.1666,
+  "wheelbase_mm": 119.375,
+  "sampled_shell_mm": {
+    "hood": 1.5995999999999952,
+    "roof": 1.687599999999989,
+    "left_side": 1.50330000000001,
+    "right_side": 1.5035999999999987
+  },
+  "door_checks": [
+    {
+      "side": "left",
+      "degrees": [
+        0,
+        60
+      ],
+      "sample_step_deg": 2,
+      "max_collision_mm3": 0,
+      "fender_envelope_collision_mm3": 0,
+      "stop_collision_at_61_deg_mm3": 0.064873
+    },
+    {
+      "side": "right",
+      "degrees": [
+        0,
+        60
+      ],
+      "sample_step_deg": 2,
+      "max_collision_mm3": 0,
+      "fender_envelope_collision_mm3": 0,
+      "stop_collision_at_61_deg_mm3": 0.064873
+    }
+  ],
+  "elastic_contacts": [
+    {
+      "parts": [
+        "door-card-left",
+        "door-clip-left"
+      ],
+      "intentional_friction_mm3": 1.299784
+    },
+    {
+      "parts": [
+        "door-card-right",
+        "door-clip-right"
+      ],
+      "intentional_friction_mm3": 1.299784
+    }
+  ],
+  "plate_count": 6,
+  "physical_print_test": false
+}

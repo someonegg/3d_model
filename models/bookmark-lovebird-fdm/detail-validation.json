@@ -1,0 +1,35 @@
+{
+  "dimensions_mm": [
+    45.0,
+    150.0,
+    1.3200000524520874
+  ],
+  "body_count": 1,
+  "eye_probe_image_row_col": [
+    324,
+    95
+  ],
+  "eye_dark_threshold_white_layers": 2,
+  "eye_width_definition": "Distance between outer sample centers of contiguous dark interval; five adjacent rows",
+  "eye_widths_mm": [
+    3.15,
+    3.3,
+    3.15,
+    3.15,
+    3.0
+  ],
+  "minimum_eye_width_mm": 0.8,
+  "eye_face_height_difference_mm": 0.7200000286102295,
+  "minimum_eye_face_difference_mm": 0.24,
+  "first_layer_mm": 0.2,
+  "subsequent_layer_mm": 0.08,
+  "total_layers": 15,
+  "white_start_layer": 6,
+  "layer_preview": "Vertex occupancy at layer tops, not extrusion paths or exact triangle intersections",
+  "not_checked": [
+    "full self-intersection",
+    "slicer extrusion paths",
+    "physical print",
+    "filament transmission calibration"
+  ]
+}

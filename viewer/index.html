@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>模型工作台</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>模型工作台</h1>
+        <span>浏览、检查与打印</span>
+      </header>
+      <main>
+        <aside class="library">
+          <details open>
+            <summary>模型库</summary>
+            <nav id="models" aria-label="模型列表"></nav>
+          </details>
+        </aside>
+        <section class="workbench">
+          <div class="toolbar">
+            <label
+              >变体
+              <select id="variants"></select></label
+            ><button id="fit">适配窗口</button
+            ><button id="reset">重置视角</button
+            ><button id="projection" aria-pressed="false">正交视图</button>
+          </div>
+          <div id="viewport">
+            <div id="status" role="status">正在读取模型库…</div>
+            <div class="view-controls" aria-label="视角">
+              <button data-view="top">上 / 正面</button
+              ><button data-view="bottom">下 / 背面</button
+              ><button data-view="front">前</button
+              ><button data-view="back">后</button
+              ><button data-view="left">左</button
+              ><button data-view="right">右</button>
+            </div>
+          </div>
+          <div class="toolbar bottom">
+            <label><input id="grid" type="checkbox" checked />网格</label
+            ><label><input id="axes" type="checkbox" checked />坐标轴</label
+            ><label><input id="wire" type="checkbox" />线框</label
+            ><span>拖动旋转 · 滚轮缩放 · 右键平移</span>
+          </div>
+        </section>
+        <aside class="details">
+          <details open>
+            <summary id="title">模型信息</summary>
+            <p id="description"></p>
+            <dl id="metrics"></dl>
+            <p id="validation"></p>
+            <div id="downloads"></div>
+          </details>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

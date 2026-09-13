@@ -1,0 +1,41 @@
+{
+  "id": "volvo-xc60-2022-display",
+  "name": "Volvo XC60 2022 智远豪华版 · 装配展示",
+  "description": "与打印分件一致的闭门及双前门打开 60° 装配预览",
+  "purpose": "display",
+  "units": "m",
+  "up": "Y",
+  "variants": [
+    {
+      "id": "closed",
+      "name": "闭门",
+      "file": "assembled.glb"
+    },
+    {
+      "id": "open",
+      "name": "双前门打开 60°",
+      "file": "doors-open.glb"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "inputs": [
+    "src/build.py",
+    "../volvo-xc60-2022/assembled.glb",
+    "../volvo-xc60-2022/doors-open.glb",
+    "../volvo-xc60-2022/preview.png",
+    "../volvo-xc60-2022/doors-open.png",
+    "../volvo-xc60-2022/exploded.png",
+    "../volvo-xc60-2022/rear.png",
+    "../volvo-xc60-2022/model.json",
+    "../volvo-xc60-2022/validation.json",
+    "../../tools/model_library/validation.py",
+    "../../tools/model_library/resources.py"
+  ],
+  "artifacts": [
+    "doors-open.png",
+    "exploded.png",
+    "rear.png"
+  ]
+}

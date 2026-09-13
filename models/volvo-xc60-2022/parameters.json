@@ -1,0 +1,26 @@
+{
+  "scale": 24,
+  "vehicle_mm": {
+    "length": 4708,
+    "width": 1902,
+    "height": 1658,
+    "wheelbase": 2865
+  },
+  "shell_mm": 1.6,
+  "door_gap_mm": 0.35,
+  "hinge_pin_mm": 1.5,
+  "hinge_bore_mm": 1.85,
+  "hinge_axial_gap_mm": 0.25,
+  "hinge_radius_mm": 2.3,
+  "door_open_deg": 60,
+  "axle_mm": 2.0,
+  "axle_bore_mm": 2.4,
+  "wheel_radius_mm": 15.446,
+  "wheel_width_mm": 9.79,
+  "wheel_center_y_mm": 34.4,
+  "hinge_xy_mm": [
+    -43.5,
+    32.0
+  ],
+  "front_axle_x_mm": -58.0
+}

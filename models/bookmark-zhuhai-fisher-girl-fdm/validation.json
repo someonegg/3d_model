@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "model": "bookmark-zhuhai-fisher-girl-fdm",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "17031a3a5a7df67768a237172bf5cd0174e12140445879eeca6341e39a6c720e",
+      "dimensions": [
+        45.0,
+        150.0,
+        1.3200000524520874
+      ],
+      "triangles": 607800,
+      "bytes": 30390084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 7121.337476045228,
+      "component_volumes": [
+        7121.337476045229
+      ],
+      "passed": true,
+      "file": "bookmark-zhuhai-fisher-girl-fdm.stl",
+      "resources": {
+        "bookmark-zhuhai-fisher-girl-fdm.stl": "17031a3a5a7df67768a237172bf5cd0174e12140445879eeca6341e39a6c720e"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "bookmark-zhuhai-fisher-girl-fdm.stl"
+    ]
+  },
+  "inputs": {
+    "src/build.py": "84c68ebc59b127b4215dffa7aad35485d01401a360f1ba4dde2900d929d3a95e",
+    "../../tools/bookmark_relief.py": "8c1498da50d10f1fd24a2ab5cb6177541a7669c2e25ae1b38b5280cfe6929db5",
+    "references/source.png": "de27b0701221ce9fddd09dda6e3ee2bb8445c574fce87639199fe42da252285b",
+    "parameters.json": "44ffa1e9a823949978d7c2506bba21e838f3e367e837f1d300749a0c98dd014f",
+    "src/verify.py": "a3f188ac3bd276952d4b4a9758c43e60c928966bfa62d4d66c89d24e48b75dd0"
+  }
+}

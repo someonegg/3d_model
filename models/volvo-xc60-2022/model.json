@@ -1,0 +1,137 @@
+{
+  "id": "volvo-xc60-2022",
+  "name": "Volvo XC60 2022 智远豪华版 · FDM",
+  "description": "1:24 PLA 分色装配车模；双前门金属销铰链，四轮滚动，适配 P2S 0.4 mm 喷嘴",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "body",
+      "name": "车壳 · 打印方向",
+      "file": "parts/body.stl"
+    },
+    {
+      "id": "plate-white-1",
+      "name": "白色车身 · 打印排版",
+      "file": "plate-white-1.stl"
+    },
+    {
+      "id": "plate-black-1",
+      "name": "黑色零件 · 打印排版",
+      "file": "plate-black-1.stl"
+    },
+    {
+      "id": "plate-silver-1",
+      "name": "银灰零件 · 打印排版",
+      "file": "plate-silver-1.stl"
+    },
+    {
+      "id": "plate-interior-1",
+      "name": "内饰 · 打印排版",
+      "file": "plate-interior-1.stl"
+    },
+    {
+      "id": "plate-light-1",
+      "name": "灯带 · 打印排版",
+      "file": "plate-light-1.stl"
+    },
+    {
+      "id": "plate-red-1",
+      "name": "尾灯 · 打印排版",
+      "file": "plate-red-1.stl"
+    },
+    {
+      "id": "fit-coupon",
+      "name": "配合试打件",
+      "file": "fit-coupon.stl"
+    },
+    {
+      "id": "door-left",
+      "name": "左前门 · 打印方向",
+      "file": "parts/door-left.stl"
+    },
+    {
+      "id": "door-right",
+      "name": "右前门 · 打印方向",
+      "file": "parts/door-right.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "verify": "src/verify.py",
+  "inputs": [
+    "src/build.py",
+    "src/geometry.py",
+    "parameters.json",
+    "src/verify.py",
+    "src/slice.py",
+    "README.md",
+    "references.md",
+    "../../requirements.txt",
+    "../../tools/slicing.py",
+    "../../tools/model_library/resources.py"
+  ],
+  "artifacts": [
+    "assembly.json",
+    "assembled.glb",
+    "doors-open.glb",
+    "doors-open.png",
+    "exploded.png",
+    "rear.png",
+    "detail-validation.json",
+    "slicing-validation.json",
+    "print-files.zip",
+    "references.md",
+    "parts/glass-front-left.stl",
+    "parts/glass-rear-left.stl",
+    "parts/glass-quarter-left.stl",
+    "parts/glass-front-right.stl",
+    "parts/glass-rear-right.stl",
+    "parts/glass-quarter-right.stl",
+    "parts/windshield.stl",
+    "parts/rear-window.stl",
+    "parts/panoramic-roof.stl",
+    "parts/door-card-left.stl",
+    "parts/door-clip-left.stl",
+    "parts/mirror-left.stl",
+    "parts/door-card-right.stl",
+    "parts/door-clip-right.stl",
+    "parts/mirror-right.stl",
+    "parts/roof-rail-left.stl",
+    "parts/roof-rail-right.stl",
+    "parts/grille-backing.stl",
+    "parts/grille-silver.stl",
+    "parts/lower-intake.stl",
+    "parts/headlamp-left.stl",
+    "parts/daylight-left.stl",
+    "parts/bumper-vent-left.stl",
+    "parts/tail-lamp-left.stl",
+    "parts/headlamp-right.stl",
+    "parts/daylight-right.stl",
+    "parts/bumper-vent-right.stl",
+    "parts/tail-lamp-right.stl",
+    "parts/front-numberplate.stl",
+    "parts/rear-numberplate.stl",
+    "parts/chassis.stl",
+    "parts/interior.stl",
+    "parts/dashboard.stl",
+    "parts/tyre-0-left.stl",
+    "parts/rim-0-left.stl",
+    "parts/hubcap-0-left.stl",
+    "parts/axle-spacer-0-left.stl",
+    "parts/tyre-0-right.stl",
+    "parts/rim-0-right.stl",
+    "parts/hubcap-0-right.stl",
+    "parts/axle-spacer-0-right.stl",
+    "parts/tyre-1-left.stl",
+    "parts/rim-1-left.stl",
+    "parts/hubcap-1-left.stl",
+    "parts/axle-spacer-1-left.stl",
+    "parts/tyre-1-right.stl",
+    "parts/rim-1-right.stl",
+    "parts/hubcap-1-right.stl",
+    "parts/axle-spacer-1-right.stl"
+  ]
+}

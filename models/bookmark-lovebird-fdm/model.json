@@ -1,0 +1,31 @@
+{
+  "id": "bookmark-lovebird-fdm",
+  "name": "牡丹鹦鹉书签 · FDM",
+  "description": "依照片转绘的牡丹鹦鹉，侧首栖于枝叶与淡雾树林间，黑白耗材叠层",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "bookmark",
+      "name": "栖枝书签",
+      "file": "bookmark-lovebird-fdm.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "verify": "src/verify.py",
+  "inputs": [
+    "src/build.py",
+    "src/verify.py",
+    "references/source.png",
+    "parameters.json",
+    "../../tools/bookmark_relief.py"
+  ],
+  "artifacts": [
+    "detail-validation.json",
+    "surface-preview.png",
+    "layers-preview.png"
+  ]
+}

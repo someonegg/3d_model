@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "model": "keyboard-fidget-fdm",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "59dc29a0b29e261b02b0c49e64e20a8665ce76fe1b88da4981b4718629da437b",
+      "dimensions": [
+        117.79999923706055,
+        76.0,
+        18.0
+      ],
+      "triangles": 4102,
+      "bytes": 205184,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 6,
+      "signed_volume": 13123.887355174986,
+      "component_volumes": [
+        6966.550379927093,
+        2048.1090846551533,
+        1465.4174605715862,
+        2262.3028399460677,
+        197.00637362325855,
+        184.50121645182284
+      ],
+      "passed": true,
+      "file": "all-parts.stl",
+      "resources": {
+        "all-parts.stl": "59dc29a0b29e261b02b0c49e64e20a8665ce76fe1b88da4981b4718629da437b"
+      }
+    },
+    {
+      "sha256": "55851cbb856eae064da6dde99590097fa2c0773558f30737ecb5348e0abf20c4",
+      "dimensions": [
+        36.25,
+        30.25,
+        8.0
+      ],
+      "triangles": 876,
+      "bytes": 43884,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 2,
+      "signed_volume": 2021.8426259934101,
+      "component_volumes": [
+        1131.7019740545581,
+        890.1406519388516
+      ],
+      "passed": true,
+      "file": "fit-coupon.stl",
+      "resources": {
+        "fit-coupon.stl": "55851cbb856eae064da6dde99590097fa2c0773558f30737ecb5348e0abf20c4"
+      }
+    },
+    {
+      "sha256": "8f1c89abd743c9a0444ba3f16556c36828c22e958da7fa38703fc6d7eec972e1",
+      "dimensions": [
+        39.0,
+        32.0,
+        18.0
+      ],
+      "triangles": 1006,
+      "bytes": 50384,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 6966.551341675979,
+      "component_volumes": [
+        6966.551341675981
+      ],
+      "passed": true,
+      "file": "shell.stl",
+      "resources": {
+        "shell.stl": "8f1c89abd743c9a0444ba3f16556c36828c22e958da7fa38703fc6d7eec972e1"
+      }
+    },
+    {
+      "sha256": "84c380906053d8ebc6000df0f128d29490cb28441e1c921b4bb3d764c3512dde",
+      "dimensions": [
+        24.0,
+        24.0,
+        4.0
+      ],
+      "triangles": 356,
+      "bytes": 17884,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 2048.1091162871426,
+      "component_volumes": [
+        2048.1091162871426
+      ],
+      "passed": true,
+      "file": "keycap.stl",
+      "resources": {
+        "keycap.stl": "84c380906053d8ebc6000df0f128d29490cb28441e1c921b4bb3d764c3512dde"
+      }
+    },
+    {
+      "sha256": "3275d9833d6c99883af4ea8569baf2f61f920b01f1ad6bb73a48a7f90d7a6da3",
+      "dimensions": [
+        19.600000381469727,
+        9.399999618530273,
+        17.0
+      ],
+      "triangles": 828,
+      "bytes": 41484,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 1465.4174812476047,
+      "component_volumes": [
+        1465.4174812476047
+      ],
+      "passed": true,
+      "file": "plunger.stl",
+      "resources": {
+        "plunger.stl": "3275d9833d6c99883af4ea8569baf2f61f920b01f1ad6bb73a48a7f90d7a6da3"
+      }
+    },
+    {
+      "sha256": "baec352a3b14d7f52ab2f0d16f5ee242732935a6bbb60679ed16e7de7f9a41b0",
+      "dimensions": [
+        30.0,
+        30.0,
+        6.300000190734863
+      ],
+      "triangles": 420,
+      "bytes": 21084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 2262.3029190848138,
+      "component_volumes": [
+        2262.3029190848138
+      ],
+      "passed": true,
+      "file": "base.stl",
+      "resources": {
+        "base.stl": "baec352a3b14d7f52ab2f0d16f5ee242732935a6bbb60679ed16e7de7f9a41b0"
+      }
+    },
+    {
+      "sha256": "4c6bf62aaf2691b4cda3653a832b5839d94bede1c685e0f939e65fe6eadc5043",
+      "dimensions": [
+        27.600000381469727,
+        27.600000381469727,
+        0.7999997138977051
+      ],
+      "triangles": 536,
+      "bytes": 26884,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 197.00641000031382,
+      "component_volumes": [
+        197.00641000031382
+      ],
+      "passed": true,
+      "file": "return-spring.stl",
+      "resources": {
+        "return-spring.stl": "4c6bf62aaf2691b4cda3653a832b5839d94bede1c685e0f939e65fe6eadc5043"
+      }
+    },
+    {
+      "sha256": "70b3d5a1f01621fc09fdcfea29d6be24349439297156b5a27f5a1c74900ce7fb",
+      "dimensions": [
+        27.600000381469727,
+        27.600000381469727,
+        2.700000286102295
+      ],
+      "triangles": 956,
+      "bytes": 47884,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 184.50125421365374,
+      "component_volumes": [
+        184.50125421365374
+      ],
+      "passed": true,
+      "file": "click-spring.stl",
+      "resources": {
+        "click-spring.stl": "70b3d5a1f01621fc09fdcfea29d6be24349439297156b5a27f5a1c74900ce7fb"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "all-parts.stl",
+      "base.stl",
+      "click-spring.stl",
+      "fit-coupon.stl",
+      "keycap.stl",
+      "plunger.stl",
+      "return-spring.stl",
+      "shell.stl"
+    ]
+  },
+  "inputs": {
+    "src/build.py": "bf74950960c8f21a5b6a933b7600fa68a5fd206a729e8d3c4bc1a4e64285bd36",
+    "src/verify.py": "72b716176275888ba5902c501f78dde56ade3fdc36707a243c55695b23b6a727",
+    "src/slice.py": "a799cd265acbacb512dcaa04e534d37abc85d8e106a00341ef837d634a4c2df1",
+    "../../tools/slicing.py": "ded6488b2226556e499f3eb86438442814ef6d8e3dc7d788bc6d4c05874f3eb5",
+    "../../tools/model_library/resources.py": "d5c7bfd861715c8452903b9b31b2120bb384a52d7705404a5b3816cb70697238"
+  },
+  "artifacts": {
+    "exploded.png": "08d51e4d0d589862fb0ee4180ff8b88b8c69e5eb14ccf86f822b52db589a5d25",
+    "assembly.json": "af236dd449e728d4dc577c8f86aab3955df643db34abb4f0a4913a85482f4b83",
+    "detail-validation.json": "6e18c0fafda3d96d37eef55636611817b1d257995bf53820a48dafc33c683173",
+    "slicing-validation.json": "42b48c4d1dec8fff88271cbb420010cd2bfb6148746ba33f26c8585328320165"
+  }
+}

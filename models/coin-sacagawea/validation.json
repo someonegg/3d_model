@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "model": "coin-sacagawea",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "2696ad0f38e1adddfab04bc516f5c99673fc64f7fc68f4816ec3c526735c7466",
+      "dimensions": [
+        60.0,
+        60.0,
+        3.200000047683716
+      ],
+      "triangles": 402000,
+      "bytes": 20100084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 7170.187176650706,
+      "component_volumes": [
+        7170.187176650703
+      ],
+      "passed": true,
+      "file": "coin-sacagawea-obverse.stl",
+      "resources": {
+        "coin-sacagawea-obverse.stl": "2696ad0f38e1adddfab04bc516f5c99673fc64f7fc68f4816ec3c526735c7466"
+      }
+    },
+    {
+      "sha256": "896cd9718013a756ad91e2a04bd01cedfb218fa14e1721db3c02dae5ce717955",
+      "dimensions": [
+        60.0,
+        60.0,
+        3.200000047683716
+      ],
+      "triangles": 402000,
+      "bytes": 20100084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 6788.499808021384,
+      "component_volumes": [
+        6788.4998080213845
+      ],
+      "passed": true,
+      "file": "coin-sacagawea-reverse.stl",
+      "resources": {
+        "coin-sacagawea-reverse.stl": "896cd9718013a756ad91e2a04bd01cedfb218fa14e1721db3c02dae5ce717955"
+      }
+    },
+    {
+      "sha256": "5cb3ac30072d3296f62208548c6f00c39307edcdbeeccb680e4b4ecdc6783ed0",
+      "dimensions": [
+        60.0,
+        60.0,
+        6.400000095367432
+      ],
+      "triangles": 800000,
+      "bytes": 40000084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 13958.686871318867,
+      "component_volumes": [
+        13958.686871318867
+      ],
+      "passed": true,
+      "file": "coin-sacagawea-double-sided.stl",
+      "resources": {
+        "coin-sacagawea-double-sided.stl": "5cb3ac30072d3296f62208548c6f00c39307edcdbeeccb680e4b4ecdc6783ed0"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "coin-sacagawea-double-sided.stl",
+      "coin-sacagawea-obverse.stl",
+      "coin-sacagawea-reverse.stl"
+    ]
+  },
+  "inputs": {
+    "src/build.py": "afac2a7c4479ec539760a9f3070de1e7d26305bfe2412df54839de9cd57c2c0b",
+    "src/portrait.py": "1d7aa5fd4acd27da667678747462ea22293e9f2755539e3c2d7a7a29b8190c39",
+    "src/reverse.py": "3c8a0141e2f2b821d6f6081696bb252170f63c00a33439df8f01593de7632029",
+    "references/reference.jpg": "d183b53739eac61fddfc4ee05dbd9c1ea1b83ef08030cfc3f43b41a29e837381"
+  }
+}

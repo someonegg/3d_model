@@ -1,0 +1,20 @@
+{
+  "id": "your-model",
+  "name": "模型名称",
+  "description": "模型用途与特点",
+  "purpose": "display",
+  "units": "m",
+  "up": "Y",
+  "variants": [
+    {
+      "id": "main",
+      "name": "默认版本",
+      "file": "model.glb"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "verify": "src/verify.py",
+  "inputs": ["src/build.py", "src/verify.py"]
+}

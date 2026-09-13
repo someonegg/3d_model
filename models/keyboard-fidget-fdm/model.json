@@ -1,0 +1,67 @@
+{
+  "id": "keyboard-fidget-fdm",
+  "name": "键盘解压按键器 · FDM",
+  "description": "方形单键，全 PLA 六件装配；可更换回弹片与凸轮段落弹舌，带挂孔；待实物验证的试打原型",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "all-parts",
+      "name": "全部六件 · 打印排版",
+      "file": "all-parts.stl"
+    },
+    {
+      "id": "fit-coupon",
+      "name": "先打印 · 配合试片",
+      "file": "fit-coupon.stl"
+    },
+    {
+      "id": "shell",
+      "name": "外壳",
+      "file": "shell.stl"
+    },
+    {
+      "id": "keycap",
+      "name": "方形键帽",
+      "file": "keycap.stl"
+    },
+    {
+      "id": "plunger",
+      "name": "导向柱",
+      "file": "plunger.stl"
+    },
+    {
+      "id": "base",
+      "name": "滑动底盖",
+      "file": "base.stl"
+    },
+    {
+      "id": "return-spring",
+      "name": "备用回弹片",
+      "file": "return-spring.stl"
+    },
+    {
+      "id": "click-spring",
+      "name": "备用段落弹舌",
+      "file": "click-spring.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "verify": "src/verify.py",
+  "inputs": [
+    "src/build.py",
+    "src/verify.py",
+    "src/slice.py",
+    "../../tools/slicing.py",
+    "../../tools/model_library/resources.py"
+  ],
+  "artifacts": [
+    "exploded.png",
+    "assembly.json",
+    "detail-validation.json",
+    "slicing-validation.json"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "bookmark-zhuhai-fisher-girl-fdm",
+  "name": "珠海渔女书签 · FDM",
+  "description": "黑白耗材叠层海景：渔女举珠、礁石与远山",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "bookmark",
+      "name": "风景书签",
+      "file": "bookmark-zhuhai-fisher-girl-fdm.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "inputs": [
+    "src/build.py",
+    "../../tools/bookmark_relief.py",
+    "references/source.png",
+    "parameters.json",
+    "src/verify.py"
+  ],
+  "verify": "src/verify.py"
+}

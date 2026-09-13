@@ -1,0 +1,34 @@
+{
+  "id": "coin-sacagawea",
+  "name": "萨卡加维亚硬币",
+  "description": "毫米单位的硬币浅浮雕模型",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "obverse",
+      "name": "正面半片",
+      "file": "coin-sacagawea-obverse.stl"
+    },
+    {
+      "id": "reverse",
+      "name": "背面半片",
+      "file": "coin-sacagawea-reverse.stl"
+    },
+    {
+      "id": "double-sided",
+      "name": "完整双面",
+      "file": "coin-sacagawea-double-sided.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "inputs": [
+    "src/build.py",
+    "src/portrait.py",
+    "src/reverse.py",
+    "references/reference.jpg"
+  ]
+}

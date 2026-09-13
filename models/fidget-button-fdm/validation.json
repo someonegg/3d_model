@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "model": "fidget-button-fdm",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "fd6b6bd022172f6edb5da278f24afd27a9f819bdecd19614c8170509dfbc14db",
+      "dimensions": [
+        105.0,
+        103.79999923706055,
+        17.0
+      ],
+      "triangles": 46680,
+      "bytes": 2334084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 4,
+      "signed_volume": 18453.14261687158,
+      "component_volumes": [
+        8273.085479654756,
+        3439.015378442442,
+        6397.641762589131,
+        343.39999618526053
+      ],
+      "passed": true,
+      "file": "fidget-button-fdm.stl",
+      "resources": {
+        "fidget-button-fdm.stl": "fd6b6bd022172f6edb5da278f24afd27a9f819bdecd19614c8170509dfbc14db"
+      }
+    },
+    {
+      "sha256": "b389f9ce1532dcce6aaf9e136a9aeacf5c93932dd87b7870a22cf88eac400db7",
+      "dimensions": [
+        34.0,
+        34.0,
+        1.0
+      ],
+      "triangles": 37464,
+      "bytes": 1873284,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 343.3999947071099,
+      "component_volumes": [
+        343.3999947071099
+      ],
+      "passed": true,
+      "file": "fidget-button-fdm-spring.stl",
+      "resources": {
+        "fidget-button-fdm-spring.stl": "b389f9ce1532dcce6aaf9e136a9aeacf5c93932dd87b7870a22cf88eac400db7"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "fidget-button-fdm-spring.stl",
+      "fidget-button-fdm.stl"
+    ]
+  },
+  "inputs": {
+    "src/build.py": "b989e89c3e69e8c338b1a62e41b39b8e5662ab1abb595a088e64b5829b08c85c",
+    "src/verify.py": "8157373642df9c0003c1b29ea99b9ca573f6621586112cbb5bfb15ee4703de66"
+  }
+}

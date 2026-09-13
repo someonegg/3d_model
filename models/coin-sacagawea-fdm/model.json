@@ -1,0 +1,27 @@
+{
+  "id": "coin-sacagawea-fdm",
+  "name": "萨卡加维亚硬币 · FDM",
+  "description": "为 0.4 mm 喷嘴与 0.12 mm 层高重塑的双面平背半片，独立粗体铭文与简化人物、鹰浮雕",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "obverse",
+      "name": "正面半片",
+      "file": "coin-sacagawea-fdm-obverse.stl"
+    },
+    {
+      "id": "reverse",
+      "name": "背面半片",
+      "file": "coin-sacagawea-fdm-reverse.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "inputs": [
+    "src/build.py",
+    "src/relief.py"
+  ]
+}

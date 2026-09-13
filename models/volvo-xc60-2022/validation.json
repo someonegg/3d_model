@@ -1,0 +1,377 @@
+{
+  "version": 1,
+  "model": "volvo-xc60-2022",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "67ac6c88c81523180375089ac30396d6e2a82337cc467badb50675dc036d8d00",
+      "dimensions": [
+        196.16659545898438,
+        80.0,
+        58.90370178222656
+      ],
+      "triangles": 36640,
+      "bytes": 1832084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 47271.35219696849,
+      "component_volumes": [
+        47271.35219696845
+      ],
+      "passed": true,
+      "file": "parts/body.stl",
+      "resources": {
+        "parts/body.stl": "67ac6c88c81523180375089ac30396d6e2a82337cc467badb50675dc036d8d00"
+      }
+    },
+    {
+      "sha256": "03e3d11f840cdc56f40ede64250b77c5c3415e36ff055e4fe3e53b52f3179c11",
+      "dimensions": [
+        196.16659545898438,
+        133.0,
+        58.90370178222656
+      ],
+      "triangles": 42488,
+      "bytes": 2124484,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 5,
+      "signed_volume": 53419.81870434139,
+      "component_volumes": [
+        47271.352540136024,
+        2900.737375179006,
+        2901.3439943578633,
+        173.19247427048504,
+        173.19232039801014
+      ],
+      "passed": true,
+      "file": "plate-white-1.stl",
+      "resources": {
+        "plate-white-1.stl": "03e3d11f840cdc56f40ede64250b77c5c3415e36ff055e4fe3e53b52f3179c11"
+      }
+    },
+    {
+      "sha256": "f6b03921f01ebab0a6e8a5ccd4ebd8d03c25b1cc71629cf2961aa057074351b9",
+      "dimensions": [
+        232.1179962158203,
+        169.60000610351562,
+        29.5
+      ],
+      "triangles": 32260,
+      "bytes": 1613084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 29,
+      "signed_volume": 67254.64541529214,
+      "component_volumes": [
+        27165.161139907836,
+        5182.648212210758,
+        2785.8930157677,
+        2350.4086564737468,
+        985.6014099121094,
+        2229.115018292825,
+        596.8507919311523,
+        4021.921110045196,
+        4021.921954000189,
+        4021.920997505566,
+        4021.920997505566,
+        1743.6161078746188,
+        1743.6200096195662,
+        1153.3744702868923,
+        1153.3834464547388,
+        1448.4844113557967,
+        1448.2467029546494,
+        46.19993591308594,
+        46.19993591308594,
+        132.00337017797094,
+        132.00338993804084,
+        147.0,
+        147.0,
+        95.39755496551425,
+        95.39758578816266,
+        95.39752414286583,
+        95.39758578816266,
+        74.28011810319731,
+        74.27996246312978
+      ],
+      "passed": true,
+      "file": "plate-black-1.stl",
+      "resources": {
+        "plate-black-1.stl": "f6b03921f01ebab0a6e8a5ccd4ebd8d03c25b1cc71629cf2961aa057074351b9"
+      }
+    },
+    {
+      "sha256": "619906dd209e346c2d269bbd6bc93b7456ae4255fd93adfb5af0febe56ca1df9",
+      "dimensions": [
+        236.01919555664062,
+        50.69999694824219,
+        8.89999771118164
+      ],
+      "triangles": 12872,
+      "bytes": 643684,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 11,
+      "signed_volume": 5218.2912974835035,
+      "component_volumes": [
+        348.44696743013407,
+        1132.0174423010965,
+        1132.018430993737,
+        1132.01746536619,
+        1132.0183221713535,
+        38.42243420741579,
+        38.42243420741579,
+        38.42243420741579,
+        38.42243420741579,
+        94.0414670289963,
+        94.0414653623313
+      ],
+      "passed": true,
+      "file": "plate-silver-1.stl",
+      "resources": {
+        "plate-silver-1.stl": "619906dd209e346c2d269bbd6bc93b7456ae4255fd93adfb5af0febe56ca1df9"
+      }
+    },
+    {
+      "sha256": "084d2d4ab14608d415e2414060e02ed98798e76b4231451756c10088906edc53",
+      "dimensions": [
+        170.0,
+        61.0,
+        31.100000381469727
+      ],
+      "triangles": 2652,
+      "bytes": 132684,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 3,
+      "signed_volume": 33442.23100130981,
+      "component_volumes": [
+        31448.185562023966,
+        997.0227288121532,
+        997.0227104736841
+      ],
+      "passed": true,
+      "file": "plate-interior-1.stl",
+      "resources": {
+        "plate-interior-1.stl": "084d2d4ab14608d415e2414060e02ed98798e76b4231451756c10088906edc53"
+      }
+    },
+    {
+      "sha256": "a6f1ed40aef23b1ecd880774e832c7145e392412e6f17e46bd60d8a810d5d63b",
+      "dimensions": [
+        13.400001525878906,
+        12.499998092651367,
+        1.0
+      ],
+      "triangles": 88,
+      "bytes": 4484,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 2,
+      "signed_volume": 26.379960556034348,
+      "component_volumes": [
+        13.189980278017174,
+        13.189980278017174
+      ],
+      "passed": true,
+      "file": "plate-light-1.stl",
+      "resources": {
+        "plate-light-1.stl": "a6f1ed40aef23b1ecd880774e832c7145e392412e6f17e46bd60d8a810d5d63b"
+      }
+    },
+    {
+      "sha256": "f08736ad6304d6e0dcaedd594af439f74721b54876d800bea9f3eb81dadc7de4",
+      "dimensions": [
+        57.72599792480469,
+        25.948997497558594,
+        14.123899459838867
+      ],
+      "triangles": 632,
+      "bytes": 31684,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 2,
+      "signed_volume": 405.2291982044276,
+      "component_volumes": [
+        202.6145503936864,
+        202.6146478107412
+      ],
+      "passed": true,
+      "file": "plate-red-1.stl",
+      "resources": {
+        "plate-red-1.stl": "f08736ad6304d6e0dcaedd594af439f74721b54876d800bea9f3eb81dadc7de4"
+      }
+    },
+    {
+      "sha256": "58a081e1a8cf0279dfb4cbac6f431735007272c6963ad3f289acfa10a7c4bfb9",
+      "dimensions": [
+        93.30000305175781,
+        57.5,
+        23.0
+      ],
+      "triangles": 5202,
+      "bytes": 260184,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 5,
+      "signed_volume": 9138.735175459728,
+      "component_volumes": [
+        8491.014493009548,
+        431.72068245017937,
+        72.0,
+        72.0,
+        72.0
+      ],
+      "passed": true,
+      "file": "fit-coupon.stl",
+      "resources": {
+        "fit-coupon.stl": "58a081e1a8cf0279dfb4cbac6f431735007272c6963ad3f289acfa10a7c4bfb9"
+      }
+    },
+    {
+      "sha256": "58c4d5d535a920d79c7b1d8c4be9de8fe2cfc6147ac04708237ae9e30bc34311",
+      "dimensions": [
+        53.79999923706055,
+        47.0,
+        20.0
+      ],
+      "triangles": 2762,
+      "bytes": 138184,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 2900.7375139453125,
+      "component_volumes": [
+        2900.7375139453125
+      ],
+      "passed": true,
+      "file": "parts/door-left.stl",
+      "resources": {
+        "parts/door-left.stl": "58c4d5d535a920d79c7b1d8c4be9de8fe2cfc6147ac04708237ae9e30bc34311"
+      }
+    },
+    {
+      "sha256": "9808acd13bc9b5f9cafd031464cd2cc82921c200efdf9d8a80b8125a523d7fae",
+      "dimensions": [
+        53.79999923706055,
+        47.0,
+        20.0
+      ],
+      "triangles": 2758,
+      "bytes": 137984,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 2901.3441041669744,
+      "component_volumes": [
+        2901.3441041669744
+      ],
+      "passed": true,
+      "file": "parts/door-right.stl",
+      "resources": {
+        "parts/door-right.stl": "9808acd13bc9b5f9cafd031464cd2cc82921c200efdf9d8a80b8125a523d7fae"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "fit-coupon.stl",
+      "parts/body.stl",
+      "parts/door-left.stl",
+      "parts/door-right.stl",
+      "plate-black-1.stl",
+      "plate-interior-1.stl",
+      "plate-light-1.stl",
+      "plate-red-1.stl",
+      "plate-silver-1.stl",
+      "plate-white-1.stl"
+    ]
+  },
+  "inputs": {
+    "src/build.py": "a595e17c7364487c15766c32e91d99da197ae16f0cc5b27c6fed39efdbfe4af1",
+    "src/geometry.py": "72e2b5ad3e3664c356a8a93e789c8a810ea9e7c75223b9fac9c23f3a1b25354a",
+    "parameters.json": "f6e6e44461137a98ff98f8f78a3ae05727e4c8dfd173b2a0456c2b41d3042940",
+    "src/verify.py": "b26cbd7e85ea4cd0ac6cb715e9768705c01e15315f4fc716e76698afcce5fa4c",
+    "src/slice.py": "0894cb7f13fc571555c55898d2f16953438451d242acffb7528eb9d8e9a0aea0",
+    "README.md": "d3629682c60cf593c583b4fe3198fe5780f5a7546fd25102539521f55b1c061d",
+    "references.md": "93a5428f29bb746cdf77d5fdd2087f4686a9780ad2ce97697e1ac7b4506a935b",
+    "../../requirements.txt": "146932b9d55acc94ceebd5f3823847ec0c3147e903c6f1128b46e8380dd82ee2",
+    "../../tools/slicing.py": "ded6488b2226556e499f3eb86438442814ef6d8e3dc7d788bc6d4c05874f3eb5",
+    "../../tools/model_library/resources.py": "d5c7bfd861715c8452903b9b31b2120bb384a52d7705404a5b3816cb70697238"
+  },
+  "artifacts": {
+    "assembly.json": "e8d19534e5108a368ad0e3f195a63612516396626d2d2e4caccedaae09e01348",
+    "assembled.glb": "908cd561153b5caf71d5b62c8c3628a98077d9575035c199174e5e7f95e73031",
+    "doors-open.glb": "0e1fad37b53cad8ece7f72a5db4faf4f54220c6cbf773e337feff637016d94dd",
+    "doors-open.png": "9f985f78abf00236e3955062ae64ddf5ff097dd565ec8630cb730823fb27b1e8",
+    "exploded.png": "e6e975cfa13e033bcb080a67642c7b123610a4cc9395326a0147e1456c28bcd7",
+    "rear.png": "abbe9a075443a26095db663a7aad98857f1125cba21557155c3951d03d556fbf",
+    "detail-validation.json": "435690c213a96574076439097f28018445c6c113d0809baa3c4972506defe189",
+    "slicing-validation.json": "92eeb5e2bdf683ea7669b779c515342cee28932d08bab3b1acaff9bdb3f096e7",
+    "print-files.zip": "3d620365f13ead005da9308b60ca6e94d3647283612fd6ed9efbeac3ecb96220",
+    "references.md": "93a5428f29bb746cdf77d5fdd2087f4686a9780ad2ce97697e1ac7b4506a935b",
+    "parts/glass-front-left.stl": "ece5d0a078c7978bf90ec9548a63968687ee9da08eefff0075da2369d66c4b28",
+    "parts/glass-rear-left.stl": "2c0bd86197ec8ffe9aee5af21a67503ab5f8408893461b413a6dbc6599c364fd",
+    "parts/glass-quarter-left.stl": "ae88b9f63a9680588dc42b1a82592bddf91ed8e31de7894cd6f5d9047c9b97a1",
+    "parts/glass-front-right.stl": "ffea29cacc47f604e15dcb54c4b4f5c0abe8f0e9986d5e7b41c14e81975231a4",
+    "parts/glass-rear-right.stl": "e8facd773d50e9e42f52cb01d02ed983198a928f716478552cf3beab4d395a01",
+    "parts/glass-quarter-right.stl": "e8a2f526715baea0e862af60badec9a68ef3cbb8fbfc12d8d970e22aa66f4cb6",
+    "parts/windshield.stl": "34d90b8faf8e2c0a7399d95abdeb80cd958aba566d9e015d80d3e6091a703890",
+    "parts/rear-window.stl": "9838382b19e9ec1cef5bae7fcb6a6bdd65c028fcc269a16026cfa0ab02e28075",
+    "parts/panoramic-roof.stl": "bed5790f99d0774626e5313ccfd6d150dcf188b59e24edcf301dfca38289825e",
+    "parts/door-card-left.stl": "6a1313de3920166e941a25ba162a05edb6e519e3639dedc8611b46c56a8c13aa",
+    "parts/door-clip-left.stl": "50310812fc41ec226bfe77ae371d83022a74ee144c5fab380fba3f068f6df3c7",
+    "parts/mirror-left.stl": "b65f2cdf4c9655cab57c8621daff2b18a3332ae79b47167cd8d7d9d8591ad13f",
+    "parts/door-card-right.stl": "d6695899859f2b5cadfa9f080028aff1d48c375511a8cd3744ff8bc34f909115",
+    "parts/door-clip-right.stl": "7841d2f9e8205d5d299550ad046aaa9a164a492955775bfa7ca54fe7bb10a2c4",
+    "parts/mirror-right.stl": "c3ede362d19dce0b107392054acbec64007e04b9ec17e91d847d8766d5df7b75",
+    "parts/roof-rail-left.stl": "dabf34dbeb432be186c455aa4e5db428f2737ecc431a58073e924216997a5a50",
+    "parts/roof-rail-right.stl": "700b17376029a63c8ab9450ffffe0752550696bf8769c31ed99353a7d87020f2",
+    "parts/grille-backing.stl": "652a1da919d9d7c260f1cca2947aa3604a9f5773632be41e38094bfbc7d48255",
+    "parts/grille-silver.stl": "f2689cb06b2baca1cd4565f7733e73bcd038ca3f0157c6803962c12ddbf827fd",
+    "parts/lower-intake.stl": "dc77a18a8742cfa43de300094f35bfaf8457abb874da4babea09498fea297aea",
+    "parts/headlamp-left.stl": "1932abaf226da005bd91a7bc7aced4a4c80f19673af725d22a77380588717365",
+    "parts/daylight-left.stl": "325f14032a5be86047920331ba6ec172c23fe764ccaaf5a997eed898fab9c30f",
+    "parts/bumper-vent-left.stl": "512c38390c28a2c22b9b9bc7a8858859eba033e11a969b276a167af87664e56a",
+    "parts/tail-lamp-left.stl": "4c9021a00313177e3145ce55b0da1e6bc8bb7c1044aec8ebd86badd5c84287c3",
+    "parts/headlamp-right.stl": "bb5084b6324c5706ff6320d71a175c88124e973e91fcc498f43d4420e0d1858c",
+    "parts/daylight-right.stl": "9793560ee7ba416c1479e3214fa9973adb54147c4200d51c70a2b6dc593f50cd",
+    "parts/bumper-vent-right.stl": "9044c0461897db064db95cb344e8149f456f248bdaf7c283549c43eefdb84869",
+    "parts/tail-lamp-right.stl": "8dfaeab5db5e28ac1e1750b02d46b2743c1df1b77b3af0a47de50ecfbfe7b98b",
+    "parts/front-numberplate.stl": "8a89aa6803f2c80c55c7ff114e43c1980dc86975c6c43954d4fe3eb11b21a964",
+    "parts/rear-numberplate.stl": "8a89aa6803f2c80c55c7ff114e43c1980dc86975c6c43954d4fe3eb11b21a964",
+    "parts/chassis.stl": "521f0f5f8af0e747e4eb4221410d094b65c641eb3c0a1c9af0b45848059e8a42",
+    "parts/interior.stl": "566cfc6a49738d54ed26f62fef9ebef0f10f8fc216883a4c87ec65ce4cca45f3",
+    "parts/dashboard.stl": "f4d62445c925ba3920d3738c6f0aeb33b5380c63b7d65d94c41cdeaa2c04a16f",
+    "parts/tyre-0-left.stl": "3eb9e975082b8f9e80d311aaf7254b8f341456ad2c9cd796b380e46617acdbf0",
+    "parts/rim-0-left.stl": "847d02129e25ca98be74ed1ee5867ac8ea25700d2800f0784ef9ebec4a640120",
+    "parts/hubcap-0-left.stl": "7d4573e184ff7ced814d1fdabdc3d955d3dd0a65d02a434b8cbf7be3c9c51b78",
+    "parts/axle-spacer-0-left.stl": "84eefc3b89424df677313b5f30d094d94344b2ee5d2cabe17b3d71d5021824a6",
+    "parts/tyre-0-right.stl": "8761c4dc5f97bd18c4bc5aaa8ee1462247091dd5617524d820b9bbeb51c19561",
+    "parts/rim-0-right.stl": "5133eae5abe751fc164b7768740c6991c0f15aca11e470b669ac699ea4e1a4af",
+    "parts/hubcap-0-right.stl": "7d4573e184ff7ced814d1fdabdc3d955d3dd0a65d02a434b8cbf7be3c9c51b78",
+    "parts/axle-spacer-0-right.stl": "84eefc3b89424df677313b5f30d094d94344b2ee5d2cabe17b3d71d5021824a6",
+    "parts/tyre-1-left.stl": "092dda30cc19a2441f54cf0260e33f4cdbbcc214a68bc81677a22084daf984d3",
+    "parts/rim-1-left.stl": "bdf3623e967e17c84eb7ed12d7b00530f32c3894a9baddf682caf86ddbbdcd2f",
+    "parts/hubcap-1-left.stl": "68a85180ac5a5825862bb65c97b41fa19641688ec9bdc28f56097da51804545f",
+    "parts/axle-spacer-1-left.stl": "84eefc3b89424df677313b5f30d094d94344b2ee5d2cabe17b3d71d5021824a6",
+    "parts/tyre-1-right.stl": "1b7f1a010faaf46bdf545835a8d84af0ef85951aac884b04a23e97e85b6af9f6",
+    "parts/rim-1-right.stl": "e34bc722261d09a0cb711107da6a6b80ecb84d650f7c4ab03ed67b63fb52c8cf",
+    "parts/hubcap-1-right.stl": "68a85180ac5a5825862bb65c97b41fa19641688ec9bdc28f56097da51804545f",
+    "parts/axle-spacer-1-right.stl": "84eefc3b89424df677313b5f30d094d94344b2ee5d2cabe17b3d71d5021824a6"
+  }
+}

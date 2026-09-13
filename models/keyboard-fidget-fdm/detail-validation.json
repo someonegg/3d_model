@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "parts": 6,
+  "travel_mm": 3,
+  "guide_clearance_per_side_mm": 0.25,
+  "keyring_hole_mm": 4,
+  "samples": [
+    {
+      "stroke_mm": 0.0,
+      "follower_displacement_mm": 0.0
+    },
+    {
+      "stroke_mm": 0.25,
+      "follower_displacement_mm": 0.0
+    },
+    {
+      "stroke_mm": 0.5,
+      "follower_displacement_mm": 0.0
+    },
+    {
+      "stroke_mm": 0.75,
+      "follower_displacement_mm": 0.0357
+    },
+    {
+      "stroke_mm": 1.0,
+      "follower_displacement_mm": 0.3214
+    },
+    {
+      "stroke_mm": 1.25,
+      "follower_displacement_mm": 0.55
+    },
+    {
+      "stroke_mm": 1.5,
+      "follower_displacement_mm": 0.55
+    },
+    {
+      "stroke_mm": 1.75,
+      "follower_displacement_mm": 0.55
+    },
+    {
+      "stroke_mm": 2.0,
+      "follower_displacement_mm": 0.55
+    },
+    {
+      "stroke_mm": 2.25,
+      "follower_displacement_mm": 0.55
+    },
+    {
+      "stroke_mm": 2.5,
+      "follower_displacement_mm": 0.2833
+    },
+    {
+      "stroke_mm": 2.75,
+      "follower_displacement_mm": 0.0
+    },
+    {
+      "stroke_mm": 3.0,
+      "follower_displacement_mm": 0.0
+    }
+  ],
+  "spring_screening": {
+    "method": "Small-deflection end-loaded cantilever; conservative effective lengths",
+    "assumed_E_MPa": 2500,
+    "return_effective_length_mm": 18,
+    "return_peak_strain_percent": 1.148,
+    "return_force_at_bottom_N": 0.816,
+    "click_effective_length_mm": 13,
+    "click_peak_strain_percent": 0.462
+  },
+  "physical_print_test": false,
+  "force_and_sound_verified": false
+}

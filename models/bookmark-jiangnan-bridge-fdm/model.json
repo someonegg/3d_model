@@ -1,0 +1,24 @@
+{
+  "id": "bookmark-jiangnan-bridge-fdm",
+  "name": "江南石桥书签 · FDM",
+  "description": "黑白耗材叠层山水：石拱桥、流水倒影与远山",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "bookmark",
+      "name": "风景书签",
+      "file": "bookmark-jiangnan-bridge-fdm.stl"
+    }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "inputs": [
+    "src/build.py",
+    "../../tools/bookmark_relief.py",
+    "references/source.png",
+    "parameters.json"
+  ]
+}

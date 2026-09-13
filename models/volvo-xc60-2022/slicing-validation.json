@@ -1,0 +1,4 @@
+{
+  "status": "not-run",
+  "reason": "Geometry rebuilt; run src/slice.py to check these exact STL files."
+}

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "model": "coin-sacagawea-fdm",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "1a14d1cf8c98fa03a2854b88efd5020eef5d90450750bae5f4529fe36c069578",
+      "dimensions": [
+        60.0,
+        60.0,
+        3.5533483028411865
+      ],
+      "triangles": 722880,
+      "bytes": 36144084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 7328.390452498294,
+      "component_volumes": [
+        7328.390452498296
+      ],
+      "passed": true,
+      "file": "coin-sacagawea-fdm-obverse.stl",
+      "resources": {
+        "coin-sacagawea-fdm-obverse.stl": "1a14d1cf8c98fa03a2854b88efd5020eef5d90450750bae5f4529fe36c069578"
+      }
+    },
+    {
+      "sha256": "10974091076cc2ea5b1215d126ea2af871dae22be35e9ce9bf9b263bf026d32d",
+      "dimensions": [
+        60.0,
+        60.0,
+        3.5470681190490723
+      ],
+      "triangles": 722880,
+      "bytes": 36144084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 6840.098035289663,
+      "component_volumes": [
+        6840.098035289669
+      ],
+      "passed": true,
+      "file": "coin-sacagawea-fdm-reverse.stl",
+      "resources": {
+        "coin-sacagawea-fdm-reverse.stl": "10974091076cc2ea5b1215d126ea2af871dae22be35e9ce9bf9b263bf026d32d"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "coin-sacagawea-fdm-obverse.stl",
+      "coin-sacagawea-fdm-reverse.stl"
+    ]
+  },
+  "inputs": {
+    "src/build.py": "b246e2969340dc72d105119e7bdd96dd802618a17606659bf75ed435b6c87b29",
+    "src/relief.py": "47d0efdf4b5d37d5705a153ea9db8b8ea7eed34f3adf6e315cdf28bfb7e7ecb1"
+  }
+}
