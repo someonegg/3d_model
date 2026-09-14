@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "model": "bookmark-lovebird-fdm",
+  "units": "mm",
+  "files": [
+    {
+      "sha256": "207809bcaa472664f33902ef2c569a436ea358516ff535ab37cd72afac35ddc6",
+      "dimensions": [
+        45.0,
+        150.0,
+        1.3200000524520874
+      ],
+      "triangles": 607800,
+      "bytes": 30390084,
+      "degenerate_faces": 0,
+      "closed_manifold_edges": true,
+      "consistent_winding": true,
+      "components": 1,
+      "signed_volume": 6668.830516428992,
+      "component_volumes": [
+        6668.830516428993
+      ],
+      "passed": true,
+      "file": "bookmark-lovebird-fdm.stl",
+      "resources": {
+        "bookmark-lovebird-fdm.stl": "207809bcaa472664f33902ef2c569a436ea358516ff535ab37cd72afac35ddc6"
+      }
+    }
+  ],
+  "config": {
+    "purpose": "print",
+    "units": "mm",
+    "up": "Z",
+    "files": [
+      "bookmark-lovebird-fdm.stl"
+    ]
+  },
+  "inputs": {
+    "build.py": "5758bb74307343a3dc6c97dc6813de5ce9431d29e8b3def730461c30f8782d2b",
+    "verify.py": "5bef3325dd99dfa7ea46c077a0aa22718fbda71fdd070da579b10242544fc091",
+    "source.png": "aa0a26db4da9e2d33f21686c3e4ac4c9d63bc55eb7761ab192ab0bde17b4667f",
+    "parameters.json": "7910a8e820937dec286bba014d6959dbeef2f6df969d7cdc52d89bd32282e5fe",
+    "../tools/bookmark_relief.py": "170d3e338c102d8490293d0ccea6dd980f5f854bde169d8b0143d2c74c0407dc"
+  },
+  "artifacts": {
+    "detail-validation.json": "1db33c2727ed139e9c2ebe4933802ee4ade26595cce89e6cd730d1c97ade3b66",
+    "surface-preview.png": "dc2d860c1215743017eb5e201964b5b391bb8480adac903530893d6d54e5afa5",
+    "layers-preview.png": "f7082c8401aa45e4b17e926e61fbb6e8974ac9a846f77964793a28c8d7eadace"
+  }
+}
