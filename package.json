@@ -15,6 +15,8 @@
     "format:check": "prettier --check \"viewer/**/*.{ts,css,html}\" \"tools/*.mjs\" \"tests/browser/*.ts\" \"*.{json,mjs,ts}\" \"tools/*.json\""
   },
   "dependencies": {
+    "dompurify": "3.2.7",
+    "marked": "16.4.1",
     "three": "0.180.0"
   },
   "devDependencies": {

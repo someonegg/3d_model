@@ -12,6 +12,12 @@ export default defineConfig({
     outDir: "../tmp/site",
     emptyOutDir: false,
     chunkSizeWarningLimit: 700,
+    rollupOptions: {
+      input: {
+        index: path.resolve(repoRoot, "viewer/index.html"),
+        view: path.resolve(repoRoot, "viewer/view.html"),
+      },
+    },
   },
   plugins: [modelLibrary(path.resolve(process.env.MODEL_ROOT || repoRoot))],
 });

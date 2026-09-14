@@ -166,9 +166,17 @@ function info(runtime?: Report) {
       [model.readme, "查看模型说明"],
     ].map(([file, label]) => {
       const a = document.createElement("a");
-      a.href = url(file);
       a.textContent = label;
-      if (!file.endsWith(".md")) a.download = file;
+      if (file.endsWith(".md")) {
+        const viewer = new URL("view.html", location.href);
+        viewer.searchParams.set("model", model.id);
+        a.href = `${import.meta.env.BASE_URL}${viewer.pathname.split("/").pop()}${viewer.search}`;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      } else {
+        a.href = url(file);
+        a.download = file;
+      }
       return a;
     }),
   );

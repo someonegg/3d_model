@@ -121,4 +121,116 @@ test("子目录静态资源与分享链接", async ({ page }) => {
   await expect(
     page.getByRole("link", { name: "下载当前模型" }),
   ).toHaveAttribute("href", /^\.\/models\//);
+  await expect(
+    page.getByRole("link", { name: "查看模型说明" }),
+  ).toHaveAttribute("href", "./view.html?model=coin-sacagawea");
+  await expect(
+    page.getByRole("link", { name: "查看模型说明" }),
+  ).toHaveAttribute("target", "_blank");
+  await expect(
+    page.getByRole("link", { name: "查看模型说明" }),
+  ).toHaveAttribute("rel", "noopener noreferrer");
+});
+
+test("渲染并清理模型说明，正确解析链接", async ({ page }) => {
+  const model = {
+    id: "markdown-fixture",
+    name: "说明测试模型",
+    base: "models/markdown-fixture/docs/",
+    readme: "README.md",
+  };
+  const markdown = `# 文档标题
+
+| 项目 | 值 |
+| --- | --- |
+| 尺寸 | 20 mm |
+
+- 列表项
+
+\`\`\`js
+const safe = true;
+\`\`\`
+
+[相对链接](../guide.pdf)
+[外部链接](https://example.com/help)
+![预览](images/preview.png)
+<script>window.__unsafe = true</script>
+<img src="x" onerror="window.__unsafe = true">
+[危险链接](javascript:window.__unsafe=true)
+`;
+  await page.route("**/catalog.json", (route) =>
+    route.fulfill({ json: [model] }),
+  );
+  await page.route("**/models/markdown-fixture/docs/README.md", (route) =>
+    route.fulfill({ contentType: "text/markdown", body: markdown }),
+  );
+  await page.goto("/view.html?model=markdown-fixture");
+  await expect(
+    page.getByRole("heading", { name: "说明测试模型" }),
+  ).toBeVisible();
+  await expect(page.locator("#markdown table")).toContainText("20 mm");
+  await expect(page.locator("#markdown pre")).toContainText("const safe");
+  await expect(page.getByRole("link", { name: "相对链接" })).toHaveAttribute(
+    "href",
+    "http://127.0.0.1:4273/models/markdown-fixture/guide.pdf",
+  );
+  await expect(page.getByRole("link", { name: "外部链接" })).toHaveAttribute(
+    "target",
+    "_blank",
+  );
+  await expect(page.getByRole("link", { name: "外部链接" })).toHaveAttribute(
+    "rel",
+    "noopener noreferrer",
+  );
+  await expect(page.getByAltText("预览")).toHaveAttribute(
+    "src",
+    "http://127.0.0.1:4273/models/markdown-fixture/docs/images/preview.png",
+  );
+  await expect(page.locator("#markdown script")).toHaveCount(0);
+  await expect(page.locator("#markdown [onerror]")).toHaveCount(0);
+  await expect(page.locator('#markdown a[href^="javascript:"]')).toHaveCount(0);
+  await expect(page.getByRole("link", { name: "查看原文" })).toHaveAttribute(
+    "href",
+    "http://127.0.0.1:4273/models/markdown-fixture/docs/README.md",
+  );
+  await expect(page.getByRole("link", { name: "返回模型工作台" })).toHaveCount(
+    0,
+  );
+  expect(await page.evaluate(() => (window as any).__unsafe)).toBeUndefined();
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBeTruthy();
+});
+
+test("模型说明显示参数、模型和请求错误", async ({ page }) => {
+  await page.goto("/view.html");
+  await expect(page.locator("#reader-status")).toContainText("缺少模型参数");
+
+  await page.route("**/catalog.json", (route) =>
+    route.fulfill({
+      json: [
+        {
+          id: "known",
+          name: "已知模型",
+          base: "models/known/",
+          readme: "README.md",
+        },
+      ],
+    }),
+  );
+  await page.goto("/view.html?model=unknown");
+  await expect(page.locator("#reader-status")).toContainText("未找到模型");
+
+  await page.route("**/models/known/README.md", (route) =>
+    route.fulfill({ status: 404 }),
+  );
+  await page.goto("/view.html?model=known");
+  await expect(page.locator("#reader-status")).toContainText(
+    "模型说明读取失败（HTTP 404）",
+  );
+  await expect(page.getByRole("link", { name: "查看原文" })).toBeVisible();
 });
