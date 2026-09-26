@@ -1324,7 +1324,7 @@
     "../volvo-xc60-2022/exploded.png": "e6e975cfa13e033bcb080a67642c7b123610a4cc9395326a0147e1456c28bcd7",
     "../volvo-xc60-2022/rear.png": "abbe9a075443a26095db663a7aad98857f1125cba21557155c3951d03d556fbf",
     "../volvo-xc60-2022/model.json": "0db8e80c00f401f14cab12a3399c9814100928049ee4c0e90b41b6ad136d18b3",
-    "../volvo-xc60-2022/validation.json": "04f844f231c1f39b71438a045d40a75845cd1a757183029636f066bbdabb6009",
+    "../volvo-xc60-2022/validation.json": "8754b0b7022e9509932b70c6a0bd9f125e226f77276d2bc59799c2e11839600b",
     "../../tools/model_library/validation.py": "167c7cd795f1359747a010bf9f9b3d60a5bf9b75575b371447527c3372b89877",
     "../../tools/model_library/resources.py": "d5c7bfd861715c8452903b9b31b2120bb384a52d7705404a5b3816cb70697238"
   },

@@ -282,13 +282,13 @@
       "sha256": "af191ce61c2d80fe00a9aeed3f021a86c9334f27eeddc75849afd9b75ae9a6b0",
       "return_code": 0,
       "warning": "",
-      "seconds": 2596.70703125,
+      "seconds": 2597.03076171875,
       "filaments": [
         {
           "filament_id": "GFA00",
           "id": 1,
-          "main_used_g": 12.519791603088379,
-          "total_used_g": 12.519791603088379
+          "main_used_g": 12.51979923248291,
+          "total_used_g": 12.51979923248291
         }
       ],
       "features": {
@@ -297,22 +297,22 @@
         "Custom": 403.09686279296875,
         "Flush": 26.0,
         "Gap infill": 0.749052107334137,
-        "Inner wall": 576.385498046875,
-        "Internal solid infill": 209.6790313720703,
+        "Inner wall": 576.5372924804688,
+        "Internal solid infill": 209.67941284179688,
         "Outer wall": 798.6516723632812,
         "Overhang wall": 17.986284255981445,
-        "Sparse infill": 82.43019104003906,
+        "Sparse infill": 82.43057250976562,
         "Top surface": 58.50918197631836,
-        "Travel": 273.23272705078125,
-        "Undefined": 266.166748046875
+        "Travel": 273.40423583984375,
+        "Undefined": 266.3382568359375
       },
-      "gcode_sha256": "bfd2aeb8d537408d9453eb8e428fc02ef431931264c5995bf8463aaafe8787dd"
+      "gcode_sha256": "ee2113804783fdd635a9b37a0c695ed4eba61cca1f16dd782daff50e27a4c9ec"
     }
   ],
   "physical_print_test": false,
   "software": "Bambu Studio 02.08.02.61",
   "cli_diagnostics": [
-    "[2026-09-26 03:55:25.348408] [0x00000001eef72180] [error]   Invalid T command (T65535).",
-    "[2026-09-26 03:55:26.141337] [0x00000001eef72180] [error]   Invalid T command (T65535)."
+    "[2026-09-26 05:09:36.489130] [0x00000001eef72180] [error]   Invalid T command (T65535).",
+    "[2026-09-26 05:09:37.204513] [0x00000001eef72180] [error]   Invalid T command (T65535)."
   ]
 }
