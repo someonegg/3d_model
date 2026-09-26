@@ -58,14 +58,90 @@
       "follower_displacement_mm": 0.0
     }
   ],
+  "cover_seating": {
+    "method": "Level-frame quasistatic contact envelope from exported STL; no friction or tilt model",
+    "insertion_step_mm": 0.1,
+    "ramp_run_mm": 1.2,
+    "ramp_rise_mm": 0.8,
+    "support_top_z_mm": 5.3,
+    "scenarios": [
+      {
+        "initial_frame_offset_mm": 0.3,
+        "samples": 341,
+        "final_frame_offset_mm": 0.0,
+        "lift_samples": [
+          {
+            "offset_mm": 26.8,
+            "frame_offset_mm": 0.26667
+          },
+          {
+            "offset_mm": 26.7,
+            "frame_offset_mm": 0.2
+          },
+          {
+            "offset_mm": 26.6,
+            "frame_offset_mm": 0.13333
+          },
+          {
+            "offset_mm": 26.5,
+            "frame_offset_mm": 0.06667
+          },
+          {
+            "offset_mm": 26.4,
+            "frame_offset_mm": 0.0
+          }
+        ]
+      },
+      {
+        "initial_frame_offset_mm": 0.45,
+        "samples": 341,
+        "final_frame_offset_mm": 0.0,
+        "lift_samples": [
+          {
+            "offset_mm": 27.0,
+            "frame_offset_mm": 0.4
+          },
+          {
+            "offset_mm": 26.9,
+            "frame_offset_mm": 0.33333
+          },
+          {
+            "offset_mm": 26.8,
+            "frame_offset_mm": 0.26667
+          },
+          {
+            "offset_mm": 26.7,
+            "frame_offset_mm": 0.2
+          },
+          {
+            "offset_mm": 26.6,
+            "frame_offset_mm": 0.13333
+          },
+          {
+            "offset_mm": 26.5,
+            "frame_offset_mm": 0.06667
+          },
+          {
+            "offset_mm": 26.4,
+            "frame_offset_mm": 0.0
+          }
+        ]
+      }
+    ]
+  },
   "spring_screening": {
     "method": "Small-deflection end-loaded cantilever; conservative effective lengths",
     "assumed_E_MPa": 2500,
     "return_effective_length_mm": 18,
-    "return_peak_strain_percent": 1.148,
-    "return_force_at_bottom_N": 0.816,
+    "return_preload_mm": 0.3,
+    "return_force_at_rest_N": 0.356,
+    "previous_return_force_at_rest_N": 0.026,
+    "previous_return_force_at_bottom_N": 0.816,
+    "click_stiffness_ratio_to_previous": 6.75,
+    "return_peak_strain_percent": 1.833,
+    "return_force_at_bottom_N": 3.911,
     "click_effective_length_mm": 13,
-    "click_peak_strain_percent": 0.462
+    "click_peak_strain_percent": 0.692
   },
   "physical_print_test": false,
   "force_and_sound_verified": false

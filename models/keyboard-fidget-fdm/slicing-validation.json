@@ -1,5 +1,318 @@
 {
-  "status": "not-run",
-  "reason": "Geometry rebuilt; run src/slice.py for these STL files.",
-  "physical_print_test": false
+  "status": "complete",
+  "printer": "Bambu Lab P2S",
+  "nozzle_mm": 0.4,
+  "layer_mm": 0.2,
+  "first_layer_mm": 0.2,
+  "wall_loops": 3,
+  "infill_percent": 15,
+  "supports": false,
+  "profile_sha256": {
+    "machine": "8c74d155986e5cd8ceb0dce74ef2ecaa528e7a2bf6deadbee92ff4fed4e894d3",
+    "process": "c0664ee186f29c65769889f86b0eb31adc35ee0f0c7803cf89806951d703d63c",
+    "filament": "ca62be006f6d5f48fc94c29a3b3a392b183d4c48674aaae46032ffddd2cb9fad"
+  },
+  "plates": [
+    {
+      "path_checks": [],
+      "support_path_checks": [],
+      "file": "fit-coupon.stl",
+      "sha256": "55851cbb856eae064da6dde99590097fa2c0773558f30737ecb5348e0abf20c4",
+      "return_code": 0,
+      "warning": "",
+      "seconds": 904.2406616210938,
+      "filaments": [
+        {
+          "filament_id": "GFA00",
+          "id": 1,
+          "main_used_g": 2.1278724670410156,
+          "total_used_g": 2.1278724670410156
+        }
+      ],
+      "features": {
+        "Bottom surface": 13.448421478271484,
+        "Bridge": 9.84213924407959,
+        "Custom": 403.65325927734375,
+        "Flush": 26.0,
+        "Gap infill": 0.5226112604141235,
+        "Inner wall": 166.19351196289062,
+        "Internal solid infill": 33.8624153137207,
+        "Outer wall": 151.3454132080078,
+        "Sparse infill": 16.78662109375,
+        "Top surface": 12.474202156066895,
+        "Travel": 77.66568756103516,
+        "Undefined": 70.09971618652344
+      },
+      "gcode_sha256": "af52ddaac313433fd76f62b06eb5132b23ea0945c3f5c7129471aa3785e54ebe"
+    },
+    {
+      "path_checks": [
+        {
+          "part": "return-spring",
+          "z_mm": 0.2,
+          "beam_probes": 70,
+          "passed": true
+        },
+        {
+          "part": "return-spring",
+          "z_mm": 0.4,
+          "beam_probes": 70,
+          "passed": true
+        },
+        {
+          "part": "return-spring",
+          "z_mm": 0.6,
+          "beam_probes": 70,
+          "passed": true
+        },
+        {
+          "part": "return-spring",
+          "z_mm": 0.8,
+          "beam_probes": 70,
+          "passed": true
+        },
+        {
+          "part": "return-spring",
+          "z_mm": 1.0,
+          "beam_probes": 70,
+          "passed": true
+        },
+        {
+          "part": "return-spring",
+          "z_mm": 1.2,
+          "beam_probes": 70,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 0.2,
+          "beam_probes": 60,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 0.4,
+          "beam_probes": 60,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 0.6,
+          "beam_probes": 60,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 0.8,
+          "beam_probes": 60,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 1.0,
+          "beam_probes": 60,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 1.2,
+          "beam_probes": 60,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 1.4,
+          "beam_probes": 60,
+          "passed": true
+        },
+        {
+          "part": "click-spring",
+          "z_mm": 1.6,
+          "beam_probes": 60,
+          "passed": true
+        }
+      ],
+      "support_path_checks": [
+        {
+          "support_xy_mm": [
+            -12.8,
+            0
+          ],
+          "z_mm": 4.6,
+          "leading_path_x_mm": -0.79,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            -12.8,
+            0
+          ],
+          "z_mm": 4.8,
+          "leading_path_x_mm": -0.49,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            -12.8,
+            0
+          ],
+          "z_mm": 5.0,
+          "leading_path_x_mm": -0.19,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            -12.8,
+            0
+          ],
+          "z_mm": 5.2,
+          "leading_path_x_mm": 0.186,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            12.8,
+            0
+          ],
+          "z_mm": 4.6,
+          "leading_path_x_mm": -0.79,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            12.8,
+            0
+          ],
+          "z_mm": 4.8,
+          "leading_path_x_mm": -0.49,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            12.8,
+            0
+          ],
+          "z_mm": 5.0,
+          "leading_path_x_mm": -0.19,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            12.8,
+            0
+          ],
+          "z_mm": 5.2,
+          "leading_path_x_mm": 0.186,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            -12.8
+          ],
+          "z_mm": 4.6,
+          "leading_path_x_mm": -0.79,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            -12.8
+          ],
+          "z_mm": 4.8,
+          "leading_path_x_mm": -0.49,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            -12.8
+          ],
+          "z_mm": 5.0,
+          "leading_path_x_mm": -0.19,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            -12.8
+          ],
+          "z_mm": 5.2,
+          "leading_path_x_mm": 0.186,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            12.8
+          ],
+          "z_mm": 4.6,
+          "leading_path_x_mm": -0.79,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            12.8
+          ],
+          "z_mm": 4.8,
+          "leading_path_x_mm": -0.49,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            12.8
+          ],
+          "z_mm": 5.0,
+          "leading_path_x_mm": -0.19,
+          "passed": true
+        },
+        {
+          "support_xy_mm": [
+            0,
+            12.8
+          ],
+          "z_mm": 5.2,
+          "leading_path_x_mm": 0.186,
+          "passed": true
+        }
+      ],
+      "file": "all-parts.stl",
+      "sha256": "af191ce61c2d80fe00a9aeed3f021a86c9334f27eeddc75849afd9b75ae9a6b0",
+      "return_code": 0,
+      "warning": "",
+      "seconds": 2596.70703125,
+      "filaments": [
+        {
+          "filament_id": "GFA00",
+          "id": 1,
+          "main_used_g": 12.519791603088379,
+          "total_used_g": 12.519791603088379
+        }
+      ],
+      "features": {
+        "Bottom surface": 86.89021301269531,
+        "Bridge": 70.08583068847656,
+        "Custom": 403.09686279296875,
+        "Flush": 26.0,
+        "Gap infill": 0.749052107334137,
+        "Inner wall": 576.385498046875,
+        "Internal solid infill": 209.6790313720703,
+        "Outer wall": 798.6516723632812,
+        "Overhang wall": 17.986284255981445,
+        "Sparse infill": 82.43019104003906,
+        "Top surface": 58.50918197631836,
+        "Travel": 273.23272705078125,
+        "Undefined": 266.166748046875
+      },
+      "gcode_sha256": "bfd2aeb8d537408d9453eb8e428fc02ef431931264c5995bf8463aaafe8787dd"
+    }
+  ],
+  "physical_print_test": false,
+  "software": "Bambu Studio 02.08.02.61",
+  "cli_diagnostics": [
+    "[2026-09-26 03:55:25.348408] [0x00000001eef72180] [error]   Invalid T command (T65535).",
+    "[2026-09-26 03:55:26.141337] [0x00000001eef72180] [error]   Invalid T command (T65535)."
+  ]
 }

@@ -4,37 +4,37 @@
   "units": "mm",
   "files": [
     {
-      "sha256": "fd6b6bd022172f6edb5da278f24afd27a9f819bdecd19614c8170509dfbc14db",
+      "sha256": "b59be7b1a2e432ba7409018e99ee6a002ef1d8f0da0e08d9118f9a381784bdd9",
       "dimensions": [
         105.0,
         103.79999923706055,
         17.0
       ],
-      "triangles": 46680,
-      "bytes": 2334084,
+      "triangles": 47832,
+      "bytes": 2391684,
       "degenerate_faces": 0,
       "closed_manifold_edges": true,
       "consistent_winding": true,
       "components": 4,
-      "signed_volume": 18453.14261687158,
+      "signed_volume": 18408.601811525594,
       "component_volumes": [
         8273.085479654756,
         3439.015378442442,
-        6397.641762589131,
-        343.39999618526053
+        6298.156969315715,
+        398.34398411269075
       ],
       "passed": true,
       "file": "fidget-button-fdm.stl",
       "resources": {
-        "fidget-button-fdm.stl": "fd6b6bd022172f6edb5da278f24afd27a9f819bdecd19614c8170509dfbc14db"
+        "fidget-button-fdm.stl": "b59be7b1a2e432ba7409018e99ee6a002ef1d8f0da0e08d9118f9a381784bdd9"
       }
     },
     {
-      "sha256": "b389f9ce1532dcce6aaf9e136a9aeacf5c93932dd87b7870a22cf88eac400db7",
+      "sha256": "f0643aaa96ad246e10dfba40e7ec480f7980883700a8abbc713c5f048c887711",
       "dimensions": [
         34.0,
         34.0,
-        1.0
+        1.159999966621399
       ],
       "triangles": 37464,
       "bytes": 1873284,
@@ -42,14 +42,14 @@
       "closed_manifold_edges": true,
       "consistent_winding": true,
       "components": 1,
-      "signed_volume": 343.3999947071099,
+      "signed_volume": 398.3439823980359,
       "component_volumes": [
-        343.3999947071099
+        398.34398239803596
       ],
       "passed": true,
       "file": "fidget-button-fdm-spring.stl",
       "resources": {
-        "fidget-button-fdm-spring.stl": "b389f9ce1532dcce6aaf9e136a9aeacf5c93932dd87b7870a22cf88eac400db7"
+        "fidget-button-fdm-spring.stl": "f0643aaa96ad246e10dfba40e7ec480f7980883700a8abbc713c5f048c887711"
       }
     }
   ],
@@ -63,7 +63,7 @@
     ]
   },
   "inputs": {
-    "src/build.py": "b989e89c3e69e8c338b1a62e41b39b8e5662ab1abb595a088e64b5829b08c85c",
-    "src/verify.py": "8157373642df9c0003c1b29ea99b9ca573f6621586112cbb5bfb15ee4703de66"
+    "src/build.py": "2368dc8cb25bdb0384d58ccf7869973c438bd48e1d6f7c95d4611853e79e47e4",
+    "src/verify.py": "980c4403d8630ab4cb7f86c82960fda1cf8de3cca6901a7c92e64db4234de44f"
   }
 }

@@ -10,9 +10,9 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = Path(__file__).resolve().parents[1]
 OUT = Path(os.environ.get('MODEL_OUTPUT_DIR', HERE))
 P = dict(body=32.0, shell_height=18.0, key=24.0, key_top=25.0,
-         travel=3.0, guide_clearance=0.25, spring_thickness=0.8,
-         spring_width=2.4, spring_length=18.0, spring_preload=0.1,
-         click_width=0.8, click_length=14.4, click_thickness=0.8,
+         travel=3.0, guide_clearance=0.25, spring_thickness=1.2,
+         spring_width=3.2, spring_length=18.0, spring_preload=0.3, frame_thickness=1.8,
+         click_width=1.2, click_length=14.4, click_thickness=1.6,
          click_deflection=0.55, hole=4.0)
 NAMES = {'shell': '外壳', 'keycap': '方形键帽', 'plunger': '导向柱',
          'base': '滑动底盖', 'return-spring': '回弹片', 'click-spring': '段落弹舌'}
@@ -57,6 +57,7 @@ def make_parts():
     shell = box(P['body'], P['body'], P['shell_height'], r=3)
     shell -= box(28.4, 28.4, 14, z=-1, r=1)
     shell -= guide_profile().extrude(7).translate((0, 0, 12))
+    shell -= guide_profile().offset(.5).extrude(.6, scale_top=(18.5/19.5, 8.5/9.5)).translate((0, 0, 13))
     shell -= box(4, 28.4, 7.55, x=15.5, z=-1)
     for side in (-1, 1):
         shell -= box(31, 1.5, 1.2, x=1.3, y=side*14.55, z=.65)
@@ -78,7 +79,7 @@ def make_parts():
     plunger = box(18, 8, 6, z=11, r=.5) + peg(21)
     plunger += rect(18, 8, .5).extrude(4, scale_top=(10/18, 6/8)).translate((0, 0, 17))
     for side in (-1, 1):
-        plunger += box(1.6, 2, 4, x=side*7.8, y=side*2.6, z=7, r=.25)
+        plunger += box(1.6, 2, 4.2, x=side*7.8, y=side*2.6, z=7.1-P['spring_preload'], r=.25)
     # Retention tabs only on Y sides: they must not intersect the X-side cam followers.
     tab = prism_xz([(3.8, 12.1), (4.7, 13), (3.8, 13)], -7, 7).rotate((0, 0, 90))
     plunger += tab + tab.mirror((0, 1, 0))
@@ -95,12 +96,18 @@ def make_parts():
         base += bump if side == 1 else bump.mirror((0, 1, 0))
         base -= box(13, .6, 8, x=10.5, y=side*12.85, z=-.5)
     for x, y in ((-12.8, 0), (12.8, 0), (0, -12.8), (0, 12.8)):
-        base += box(2, 2, 3.9, x=x, y=y, z=2.4)
+        # The lid enters toward -X. Lead the loose return frame onto the
+        # unchanged Z=5.3 seat instead of catching it with a vertical face.
+        base += prism_xz([(x-1, 2.4), (x+1, 2.4), (x+1, 5.3),
+                          (x+.2, 5.3), (x-1, 4.5)], y-1, y+1)
+    # Relief pockets leave 1.6 mm floor beneath the thicker arms at full travel.
+    for side in (-1, 1):
+        base -= box(22, 4.4, .9, x=side*-2.15, y=side*2.6, z=1.6, r=.4)
     # Fingernail recess on the outward-facing edge.
     base -= box(1.6, 7, 1.0, x=16, z=5.2, r=.3)
 
     frame = rect(27.6, 27.6, .8) - rect(24.8, 24.8, .4)
-    frame -= rect(2.2, 1.6).translate((-13.3, 0))
+    frame -= rect(2.6, 2.0).translate((-13.3, 0))
     spring2d = frame
     for side in (-1, 1):
         beam = rect(21.3, P['spring_width'], .6).translate((-2.15, 2.6))
@@ -109,22 +116,27 @@ def make_parts():
         arm = (beam + root) ^ rect(27.6, 27.6, .8)
         spring2d += arm if side == 1 else arm.rotate(180)
     spring = spring2d.extrude(P['spring_thickness']).translate((0, 0, 7.1-P['spring_thickness']))
+    spring += frame.extrude(P['frame_thickness']).translate((0, 0, 7.1-P['frame_thickness']))
 
     click2d = frame
     for side in (-1, 1):
-        arm = rect(P['click_width'], 16.3, .2).translate((11, -4.65))
-        arm += rect(2.15, 1, .2).translate((10.325, 2.0))
-        arm += mf.CrossSection.circle(.9, 24).translate((11, -12.4))
+        arm = rect(P['click_width'], 16.3, .2).translate((11.2, -4.65))
+        arm += rect(2.35, 1, .2).translate((10.425, 2.0))
+        arm += mf.CrossSection.circle(1.1, 24).translate((11.2, -12.4))
         # Rigid strike tongue, 0.35 mm from the relaxed beam. Dynamic overshoot
         # may strike it; audible output is deliberately a physical-test criterion.
         strike = rect(1, 10.3, .2).translate((9.75, 7.85))
         group = arm + strike
         click2d += group if side == 1 else group.mirror((1, 0))
-    click = click2d.extrude(P['click_thickness']).translate((0, 0, 9))
-    for x in (-12.7, 12.7):
-        for y in (-12.7, 12.7):
-            foot = box(2, 2, 1.9, x=x, y=y, z=7.1)
-            click += foot
+    click = click2d.extrude(P['click_thickness']).translate((0, 0, 9.8-P['click_thickness']))
+    # Keep the cam contact window at Z 9..9.8 while thickening the lateral beams.
+    # This preserves release before the 3 mm bottom stop.
+    click -= box(20, 1.2, .8, y=2, z=8.2)
+    # Continuous spacer rim is easier to hold and seats flat on the return frame.
+    click += frame.extrude(9.8-P['click_thickness']-7.1).translate((0, 0, 7.1))
+    # The free tail bends farther than the follower; relieve the adjacent rim.
+    for side in (-1, 1):
+        click -= box(.5, 7, 1.7, x=side*12.55, y=1.5, z=8.2)
     return dict(shell=shell, keycap=cap, plunger=plunger, base=base,
                 **{'return-spring': spring, 'click-spring': click})
 
@@ -138,7 +150,7 @@ def mesh_of(solid):
 
 def printing(solid, name):
     m = mesh_of(solid)
-    rotation = 180 if name in ('shell', 'keycap', 'plunger', 'click-spring') else 0
+    rotation = 180 if name in ('shell', 'keycap', 'plunger', 'click-spring', 'return-spring') else 0
     matrix = trimesh.transformations.rotation_matrix(np.radians(rotation), [1, 0, 0])
     m.apply_transform(matrix)
     matrix2 = trimesh.transformations.translation_matrix([0, 0, -m.bounds[0, 2]])

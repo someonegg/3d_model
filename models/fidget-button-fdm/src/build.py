@@ -9,6 +9,8 @@ HERE = Path(__file__).resolve().parents[1]
 OUT = Path(os.environ.get('MODEL_OUTPUT_DIR', HERE))
 NAME = 'fidget-button-fdm.stl'
 SEGMENTS = 192
+SPRING_THICKNESS = 1.16
+RIB_HEIGHT = 0.30
 
 
 def revolve(profile, radial_mod=None):
@@ -65,7 +67,7 @@ def spring(pitch=0.2):
         key = (i, j, top)
         if key not in lookup:
             lookup[key] = len(vertices)
-            vertices.append((-17.2 + i * pitch, -17.2 + j * pitch, float(top)))
+            vertices.append((-17.2 + i * pitch, -17.2 + j * pitch, float(top) * SPRING_THICKNESS))
         return lookup[key]
 
     nx, ny = filled.shape
@@ -98,12 +100,18 @@ def make_parts():
                    (2.6, 8.7), (2.6, 6.0), (0, 6.0)])
     # The plug supports the spring rim and stops the cap after 1.5 mm of travel.
     def grip(profile_index, angle):
-        # Six shallow compression ribs hold the serviceable cover in its bore.
-        return 0.40 * max(0.0, np.cos(6 * angle)) ** 12 if profile_index in (4, 5) else 0.0
+        # Short ribs: 0.05 mm radial interference with lead-in/out ramps.
+        if profile_index in (5, 6):
+            return RIB_HEIGHT * max(0.0, np.cos(6 * angle)) ** 12
+        # Two opposed recesses at the seam; the bottom stays flat and full-size.
+        if profile_index == 3:
+            return -2.0 * max(0.0, np.cos(2 * angle)) ** 16
+        return 0.0
 
-    plug = revolve([(0, 0), (21.0, 0), (21.0, 2.4), (17.25, 2.4),
-                    (17.25, 3.0), (17.25, 10.4), (17.05, 11.2),
-                    (14.0, 11.2), (14.0, 2.4), (3.0, 2.4),
+    plug = revolve([(0, 0), (21.0, 0), (21.0, 1.2), (21.0, 2.4),
+                    (17.25, 2.4), (17.25, 3.0), (17.25, 4.2),
+                    (17.25, 4.8), (17.25, 10.24), (17.05, 11.04),
+                    (14.0, 11.04), (14.0, 2.4), (3.0, 2.4),
                     (3.0, 10.7), (0, 10.7)], radial_mod=grip)
     return [('外壳', shell), ('按帽', cap), ('底盖', plug), ('弹片', spring())]
 
@@ -127,15 +135,18 @@ def draw_preview():
     draw.rounded_rectangle((cx-147, 258, cx+147, 276), radius=8, fill=pale, outline=black, width=3)
     draw.line((cx-125, 267, cx-23, 267), fill=accent, width=7)
     draw.line((cx+23, 267, cx+125, 267), fill=accent, width=7)
-    draw.text((cx+160, 258), 'FLEXURE', fill=black)
+    draw.text((cx+160, 258), '1.16 mm', fill=black)
     draw.rounded_rectangle((cx-182, 337, cx+182, 359), radius=8, fill=black)
     draw.rectangle((cx-150, 322, cx-117, 337), fill=black)
     draw.rectangle((cx+117, 322, cx+150, 337), fill=black)
-    draw.text((cx+150, 338), 'BASE', fill=black)
+    draw.polygon([(cx-182, 337), (cx-164, 337), (cx-182, 349)], fill='#f5f2eb')
+    draw.polygon([(cx+182, 337), (cx+164, 337), (cx+182, 349)], fill='#f5f2eb')
+    draw.text((cx+150, 370), 'PRY RECESSES', fill=black)
     draw.line((cx, 205, cx, 249), fill=accent, width=3)
     draw.line((cx, 280, cx, 327), fill=accent, width=3)
     draw.text((655, 442), 'EXPLODED ASSEMBLY', fill=black)
     draw.text((653, 473), 'Printed flat; insert cap from below, then flexure and base.', fill=black)
+    draw.text((653, 506), 'Short grip ribs  |  two pry recesses  |  1.16 mm flexure', fill=black)
     canvas.save(OUT / 'preview.png')
 
 

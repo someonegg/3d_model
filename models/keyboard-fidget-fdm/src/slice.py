@@ -41,8 +41,7 @@ def check_archive_geometry(archive, source):
         assert max(distances)<2e-5, 'sliced geometry differs from current STL'
 
 
-def inspect_spring_paths(gcode, output, bounds):
-    """Audit first four layers at beam-centre probes; retain toolpath overview."""
+def extrusion_segments(gcode):
     layer=0.; feature=''; relative=True; position=dict(X=0.,Y=0.,Z=0.,E=0.)
     segments=[]
     for line in gcode.splitlines():
@@ -65,23 +64,30 @@ def inspect_spring_paths(gcode, output, bounds):
         old=position.copy()
         e=data.get('E',0) if relative else data.get('E',old['E'])-old['E']
         position.update(data)
-        if e>0 and ('X' in data or 'Y' in data) and 0<layer<=.8:
+        if e>0 and ('X' in data or 'Y' in data) and 0<layer<=5.4:
             segments.append((layer,np.array([old['X'],old['Y']]),np.array([position['X'],position['Y']]),feature))
+    return segments
+
+
+def inspect_spring_paths(gcode, output, bounds):
+    """Audit all compliant layers at beam-centre probes; retain toolpath overview."""
+    segments=extrusion_segments(gcode)
     source=trimesh.load(HERE/'all-parts.stl',force='mesh')
     shift=np.array([bounds['x'],bounds['y']])-source.bounds[0,:2]
-    checks=[]; canvas=Image.new('RGB',(1400,820),'#f5f2eb'); draw=ImageDraw.Draw(canvas)
+    checks=[]; canvas=Image.new('RGB',(1400,1620),'#f5f2eb'); draw=ImageDraw.Draw(canvas)
     for col,(part,center) in enumerate((('return-spring',(9,18)),('click-spring',(49,18)))):
         center=np.array(center)+shift
-        for row,height in enumerate((.2,.4,.6,.8)):
+        heights = np.arange(.2, 1.21, .2) if part=='return-spring' else np.arange(.2, 1.61, .2)
+        for row,height in enumerate(np.round(heights, 3)):
             paths=[(a,b,f) for z,a,b,f in segments if z==height and
                    np.all(np.abs((a+b)/2-center)<15)]
             assert paths, f'{part} missing layer {height}'
             # Continuous centreline coverage over both straight compliant arms.
             if part=='return-spring':
-                probes=np.array([(side*x,side*2.6) for side in (-1,1) for x in np.linspace(-10,7,35)])+center
+                probes=np.array([(side*x,-side*2.6) for side in (-1,1) for x in np.linspace(-10,7,35)])+center
             else:
                 # Printed upside down, so assembly Y reverses.
-                probes=np.array([(side*11,-y) for side in (-1,1) for y in np.linspace(-10,1,30)])+center
+                probes=np.array([(side*11.2,-y) for side in (-1,1) for y in np.linspace(-10,1,30)])+center
             starts=np.array([a for a,b,f in paths]); vectors=np.array([b-a for a,b,f in paths])
             denom=np.sum(vectors*vectors,axis=1)
             for point in probes:
@@ -96,6 +102,38 @@ def inspect_spring_paths(gcode, output, bounds):
                 color='#b56b2f' if 'wall' in f.lower() else '#277f85'
                 draw.line([tuple(a),tuple(b)],fill=color,width=2)
     canvas.save(output/'spring-toolpaths.png')
+    return checks
+
+
+def inspect_support_paths(gcode, output, bounds):
+    """Check all four ramps narrow upward and retain an extruded seating pad."""
+    segments=extrusion_segments(gcode)
+    source=trimesh.load(HERE/'all-parts.stl',force='mesh')
+    shift=np.array([bounds['x'],bounds['y']])-source.bounds[0,:2]+[-32,18]
+    canvas=Image.new('RGB',(1200,1200),'#f5f2eb'); draw=ImageDraw.Draw(canvas)
+    checks=[]
+    for col,(x,y) in enumerate(((-12.8,0),(12.8,0),(0,-12.8),(0,12.8))):
+        center=shift+[x,y]; edges=[]
+        for row,height in enumerate((4.6,4.8,5.0,5.2)):
+            paths=[(a-center,b-center) for z,a,b,f in segments if z==height and
+                   np.all(np.abs((a+b)/2-center)<1.05)]
+            assert paths, f'support {col} missing layer {height}'
+            starts=np.array([a for a,b in paths]); vectors=np.array([b-a for a,b in paths])
+            point=np.array([.6,0])
+            t=np.clip(np.sum((point-starts)*vectors,axis=1)/np.maximum(np.sum(vectors*vectors,axis=1),1e-12),0,1)
+            assert min(np.linalg.norm(starts+t[:,None]*vectors-point,axis=1))<.32, 'missing support pad extrusion'
+            edge=float(np.vstack(paths)[:,0].min()); edges.append(edge)
+            checks.append(dict(support_xy_mm=[x,y],z_mm=height,leading_path_x_mm=round(edge,4),passed=True))
+            origin=np.array([150+col*300,150+row*300])
+            draw.text(tuple(origin+[-135,-135]),f'({x}, {y}) | Z {height}',fill='#253846')
+            # Nominal section at the middle of the printed 0.2 mm layer.
+            left=-1+max(0.,height-.1-4.5)*1.2/.8
+            draw.rectangle([tuple(origin+[left*90,-90]),tuple(origin+[90,90])],outline='#b9b3a8',width=2)
+            for a,b in paths:
+                draw.line([tuple(origin+a*90),tuple(origin+b*90)],fill='#277f85',width=3)
+        assert all(b>=a-.02 for a,b in zip(edges,edges[1:])), 'ramp reverses in sliced layers'
+        assert edges[-1]-edges[0]>.5, 'ramp absent from sliced layers'
+    canvas.save(output/'support-toolpaths.png')
     return checks
 
 
@@ -141,7 +179,8 @@ def main():
             (output/'plate.gcode').write_text(gcode)
         plate=info['sliced_plates'][0]
         path_checks=inspect_spring_paths(gcode,root,plate['objects'][0]['bbox']) if filename=='all-parts.stl' else []
-        rows.append(dict(path_checks=path_checks,file=filename,sha256=sha(HERE/filename),return_code=0,
+        support_checks=inspect_support_paths(gcode,root,plate['objects'][0]['bbox']) if filename=='all-parts.stl' else []
+        rows.append(dict(path_checks=path_checks,support_path_checks=support_checks,file=filename,sha256=sha(HERE/filename),return_code=0,
                          warning=plate.get('warning_message',''),seconds=plate['total_predication'],
                          filaments=plate['filaments'],features=plate['feature_type_times'],
                          gcode_sha256=hashlib.sha256(gcode.encode()).hexdigest()))

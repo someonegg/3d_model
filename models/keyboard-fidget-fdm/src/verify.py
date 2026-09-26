@@ -37,11 +37,11 @@ def bent_return(mesh, stroke):
     p=m.vertices.copy()
     for side in (-1, 1):
         x=side*p[:, 0]; y=side*p[:, 1]
-        mask=(x>-11)&(x<9)&(y>1.39)&(y<3.81)
+        mask=(x>-11)&(x<9)&(y>.99)&(y<4.21)
         distance=np.maximum(0, x+11)
         t=np.minimum(distance/18, 1)
         shape=t*t*(3-t)/2 + np.maximum(0, distance-18)*1.5/18
-        p[mask, 2] -= (stroke+.1)*shape[mask]
+        p[mask, 2] -= (stroke+.3)*shape[mask]
     m.vertices=p
     return solid(m)
 
@@ -53,13 +53,55 @@ def bent_click(mesh, displacement):
     p=m.vertices.copy()
     for side in (-1, 1):
         x=side*p[:, 0]; y=p[:, 1]
-        mask=(x>9.2)&(x<12)&(y>-11.5)&(y<3.51)
+        mask=(x>9.2)&(x<12.39)&(y>-11.5)&(y<3.51)
         mask &= ~((x<10.59)&(y>2.51))
         t=np.clip((y+11.5)/13, 0, 1)
         shape=t*t*(3-t)/2+np.maximum(0,y-1.5)*1.5/13
         p[mask, 0] += side*displacement*shape[mask]
     m.vertices=p
     return solid(m)
+
+
+def check_cover_seating(solids, spring):
+    """Quasistatic, level-frame seating driven by the exported lid surface.
+
+    The frame can move toward its seat but cannot teleport over a vertical
+    obstacle. This checks geometry, not friction, tilt or insertion force.
+    """
+    frame = solids['return-spring'] ^ cube((40, 40, .4), (0, 0, 5.5))
+    footprint = frame.project().extrude(10)
+    results = []
+    step = .1
+    for initial in (.3, .45):
+        remaining = initial
+        returned = None
+        lifts = []
+        for offset in np.linspace(34, 0, 341):
+            lid = solids['base'].translate((float(offset), 0, 0))
+            beneath = lid ^ footprint
+            height = beneath.bounding_box()[5] if not beneath.is_empty() else 0.
+            new_remaining = min(remaining, max(0., 5.3-height))
+            lift = remaining-new_remaining
+            # A vertical post would require an instantaneous 0.3/0.45 mm jump.
+            assert lift <= step*(.8/1.2)+1e-5, f'abrupt frame lift at {offset}: {lift}'
+            if returned is None or lift > 1e-7:
+                # Before contact the arm is relaxed; preload grows as the
+                # frame approaches its final seat beneath the plunger feet.
+                preload = max(0., .3-new_remaining)
+                returned = bent_return(spring, preload-.3).translate((0, 0, -new_remaining))
+            for fixed in ('shell', 'click-spring', 'plunger'):
+                require_clear(returned, solids[fixed], f'loose frame/{fixed}/{initial}/{offset}', .003)
+            require_clear(lid, returned, f'cover seating/{initial}/{offset}')
+            if lift > 1e-7:
+                lifts.append(dict(offset_mm=round(float(offset), 3),
+                                  frame_offset_mm=round(new_remaining, 5)))
+            remaining = new_remaining
+        assert remaining < 1e-5 and lifts, 'frame did not reach its seat'
+        results.append(dict(initial_frame_offset_mm=initial, samples=341,
+                            final_frame_offset_mm=round(remaining, 5), lift_samples=lifts))
+    return dict(method='Level-frame quasistatic contact envelope from exported STL; no friction or tilt model',
+                insertion_step_mm=step, ramp_run_mm=1.2, ramp_rise_mm=.8,
+                support_top_z_mm=5.3, scenarios=results)
 
 
 def main():
@@ -91,7 +133,14 @@ def main():
     np.testing.assert_allclose(assembled['keycap'].extents, [24,24,4], atol=1e-5)
     np.testing.assert_allclose(assembled['shell'].extents, [39,32,18], atol=1e-5)
     spring=assembled['return-spring']
-    assert abs(spring.extents[2]-.8)<1e-5
+    assert abs(spring.extents[2]-1.8)<1e-5
+    # Measure compliant sections in the final STL, away from fillets and contacts.
+    for name, probe, expected in (
+        ('return-spring', cube((1, 5, 4), (0, 2.6, 6.2)), (1, 3.2, 1.2)),
+        ('click-spring', cube((2, 1, 4), (11.2, -4, 9)), (1.2, 1, 1.6)),
+    ):
+        bounds = np.array((solids[name] ^ probe).bounding_box())
+        np.testing.assert_allclose(bounds[3:]-bounds[:3], expected, atol=1e-5)
     # Probe actual exported interfaces, not source parameters.
     guide=cube((18.48,8.48,4.8),(0,0,15.5))
     # Rounded guide corners are excluded from this rectangular probe.
@@ -110,17 +159,36 @@ def main():
     for name in ('return-spring','click-spring'):
         assert overlap(solids[name].rotate((0,0,90)),solids['shell'])>.1
         assert overlap(solids[name].rotate((0,0,180)),solids['shell'])>.1
+    # Drop-in insertion from the open underside, before sliding the cover.
+    for offset in np.linspace(0, 12, 25):
+        click_insert = solids['click-spring'].translate((0, 0, -float(offset)))
+        return_insert = solids['return-spring'].translate((0, 0, -float(offset)))
+        require_clear(click_insert, solids['shell'], f'click insertion/{offset}')
+        require_clear(click_insert, solids['plunger'], f'click/stem insertion/{offset}')
+        require_clear(return_insert, solids['shell'], f'return insertion/{offset}')
+        require_clear(return_insert, solids['click-spring'], f'return/click insertion/{offset}')
     # Keycap rib interference is deliberate, confined to the removable peg.
     peg_contact=solids['keycap'] ^ solids['plunger']
     assert .1<peg_contact.volume()<.8
     require_clear(peg_contact, cube((40,40,40),(0,0,1)), 'peg interference outside socket')
     # Sliding cover path; detents are the only permitted insertion interference.
+    preloaded_return = bent_return(spring, 0)
     for offset in np.linspace(0,34,35):
         lid=solids['base'].translate((float(offset),0,0))
         rigid=lid
         for side in (-1,1):
             rigid -= cube((3,1.2,.6),(12+float(offset),side*14,2.2))
         require_clear(rigid,solids['shell'],f'cover insertion {offset}')
+        require_clear(lid, preloaded_return, f'cover/return insertion {offset}')
+        require_clear(lid, solids['click-spring'], f'cover/click insertion {offset}')
+    seating = check_cover_seating(solids, spring)
+    # A manifold status alone does not detect the arm hitting its own rigid rim.
+    for side in (-1, 1):
+        arm = solids['click-spring'] ^ cube((3.19, 15, 2), (side*10.795, -4, 9))
+        raw = arm.to_mesh()
+        arm_mesh = trimesh.Trimesh(np.asarray(raw.vert_properties)[:, :3], np.asarray(raw.tri_verts))
+        rim = solids['click-spring'] ^ cube((2, 20, 4), (side*13.4, 0, 8.5))
+        require_clear(bent_click(arm_mesh, .565), rim, f'click arm/own rim/{side}')
     samples=[]
     for stroke in np.linspace(0,3,13):
         stroke=float(stroke)
@@ -148,13 +216,18 @@ def main():
     assert overlap(solids['plunger'].translate((0,0,.15)),solids['shell'])>.1
     assert overlap(solids['keycap'].translate((0,0,-3.15)),solids['shell'])>1
     report=dict(passed=True, parts=6, travel_mm=3, guide_clearance_per_side_mm=.25,
-                keyring_hole_mm=4, samples=samples,
+                keyring_hole_mm=4, samples=samples, cover_seating=seating,
                 spring_screening=dict(method='Small-deflection end-loaded cantilever; conservative effective lengths',
                     assumed_E_MPa=2500, return_effective_length_mm=18,
-                    return_peak_strain_percent=round(100*1.5*.8*3.1/18**2,3),
-                    return_force_at_bottom_N=round(2*2500*2.4*.8**3*3.1/(4*18**3),3),
+                    return_preload_mm=.3,
+                    return_force_at_rest_N=round(2*2500*3.2*1.2**3*.3/(4*18**3),3),
+                    previous_return_force_at_rest_N=round(2*2500*2.4*.8**3*.1/(4*18**3),3),
+                    previous_return_force_at_bottom_N=round(2*2500*2.4*.8**3*3.1/(4*18**3),3),
+                    click_stiffness_ratio_to_previous=round((1.6/.8)*(1.2/.8)**3,3),
+                    return_peak_strain_percent=round(100*1.5*1.2*3.3/18**2,3),
+                    return_force_at_bottom_N=round(2*2500*3.2*1.2**3*3.3/(4*18**3),3),
                     click_effective_length_mm=13,
-                    click_peak_strain_percent=round(100*1.5*.8*.65/13**2,3)),
+                    click_peak_strain_percent=round(100*1.5*1.2*.65/13**2,3)),
                 physical_print_test=False, force_and_sound_verified=False)
     slicing=json.loads((OUT/'slicing-validation.json').read_text())
     if slicing.get('status')=='complete':

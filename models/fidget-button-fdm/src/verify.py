@@ -12,8 +12,8 @@ def main():
     assert len(parts) == 4, f'expected four separate printable parts, got {len(parts)}'
     assert all(part.is_watertight and part.is_winding_consistent and part.volume > 0 for part in parts)
     by_height = {round(float(part.extents[2]), 2): part for part in parts}
-    assert set(by_height) == {17.0, 11.2, 8.7, 1.0}, by_height.keys()
-    shell, plug, cap, flexure = (by_height[h] for h in (17.0, 11.2, 8.7, 1.0))
+    assert set(by_height) == {17.0, 11.04, 8.7, 1.16}, by_height.keys()
+    shell, plug, cap, flexure = (by_height[h] for h in (17.0, 11.04, 8.7, 1.16))
     assert replacement.is_watertight and replacement.is_winding_consistent
     assert len(replacement.split(only_watertight=True)) == 1
     np.testing.assert_allclose(replacement.extents, flexure.extents, atol=1e-5)
@@ -43,19 +43,32 @@ def main():
     for part, height, radius in ((shell, 0, 13.0), (shell, 2.5, 17.5),
                                  (cap, 0, 12.6), (cap, 4.0, 13.8),
                                  (cap, 8.7, 6.0), (cap, 8.7, 2.6),
-                                 (plug, 3.0, 17.25), (plug, 3.0, 17.65),
-                                 (plug, 11.2, 14.0), (plug, 10.7, 3.0)):
+                                 (plug, 3.0, 17.25), (plug, 3.0, 17.55),
+                                 (plug, 11.04, 14.0), (plug, 10.7, 3.0)):
         has_radius(part, height, radius)
+    # The long upper wall must clear the bore; only 1.2 mm of ribs retain it.
+    for height in (4.8, 10.24):
+        np.testing.assert_allclose(radii_at(plug, height), 17.25, atol=1e-5)
+    for height in (3.0, 4.2):
+        radii = radii_at(plug, height)
+        assert np.count_nonzero(radii > 17.5) == 6
+        np.testing.assert_allclose(radii.max(), 17.55, atol=1e-5)
+    # Recess lips leave a 1.2 mm floor and 2 mm tool access at both X ends.
+    center = (plug.bounds[0, :2] + plug.bounds[1, :2]) / 2
+    seam = plug.vertices[np.isclose(plug.vertices[:, 2], 2.4), :2] - center
+    for sign in (-1, 1):
+        assert np.any(np.linalg.norm(seam - [sign * 19.0, 0], axis=1) < 1e-5)
+    has_radius(plug, 1.2, 21.0)
     assert 13.0 - 12.6 >= 0.35  # radial clearance around the cap face
     assert 17.5 - 17.25 >= 0.20  # main plug body clearance
-    assert 17.65 > 17.5  # retaining ribs; physical fit still needs a test print
+    assert 0.04 < 17.55 - 17.5 < 0.06  # retaining ribs; physical fit still needs a test print
     assert 14.0 < 14.25 < 17.1 < 17.5  # spring frame supported inside the shell
 
     # Assembled Z: shell top 17, cap face 18.5, cap pusher lower face 9.8.
-    spring_top_z = -2.4 + 11.2 + 1.0
+    spring_top_z = -2.4 + float(plug.bounds[1, 2]) + float(flexure.extents[2])
     cap_pusher_z = 18.5 - 8.7
     stop_z = -2.4 + 10.7
-    assert abs(spring_top_z - cap_pusher_z) < 1e-6
+    assert abs(spring_top_z - cap_pusher_z) < 1e-5
     assert abs(cap_pusher_z - stop_z - 1.5) < 1e-6
     # The spring tips straddle the stop and meet the annular pusher.
     xy = flexure.vertices[:, :2] - (flexure.bounds[0, :2] + flexure.bounds[1, :2]) / 2
@@ -63,7 +76,7 @@ def main():
     assert np.min(np.abs(near_center[:, 1])) >= 3.19
     assert np.any((near_center[:, 1] >= 3.2) & (near_center[:, 1] <= 5.4))
     assert np.any((near_center[:, 1] <= -3.2) & (near_center[:, 1] >= -5.4))
-    print('4 closed parts; 42 mm diameter; 0.4 mm cap clearance; 1.5 mm mechanical travel')
+    print('4 closed parts; 42 mm diameter; 0.4 mm cap clearance; 1.5 mm mechanical travel; 1.16 mm flexure; short ribs and two pry recesses')
 
 
 if __name__ == '__main__':
