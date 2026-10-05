@@ -1,0 +1,49 @@
+{
+  "file": "print-files.zip",
+  "files": [
+    {
+      "from": "source",
+      "path": "README.md"
+    },
+    {
+      "from": "output",
+      "path": "all-parts.stl"
+    },
+    {
+      "from": "output",
+      "path": "base.stl"
+    },
+    {
+      "from": "output",
+      "path": "click-spring.stl"
+    },
+    {
+      "from": "output",
+      "path": "exploded.png"
+    },
+    {
+      "from": "output",
+      "path": "keycap.stl"
+    },
+    {
+      "from": "output",
+      "path": "plunger.stl"
+    },
+    {
+      "from": "output",
+      "path": "preview.png"
+    },
+    {
+      "from": "output",
+      "path": "return-spring.stl"
+    },
+    {
+      "from": "output",
+      "path": "shell.stl"
+    },
+    {
+      "path": "assembly.glb",
+      "from": "output"
+    }
+  ]
+}

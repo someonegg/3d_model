@@ -1,0 +1,17 @@
+{
+  "file": "print-files.zip",
+  "files": [
+    {"from": "output", "path": "all-parts.stl"},
+    {"from": "output", "path": "link-base.stl"},
+    {"from": "output", "path": "terminal-base.stl"},
+    {"from": "output", "path": "link-lid.stl"},
+    {"from": "output", "path": "terminal-lid.stl"},
+    {"from": "output", "path": "slider.stl"},
+    {"from": "output", "path": "lock-pin.stl"},
+    {"from": "output", "path": "star-head.stl"},
+    {"from": "output", "path": "closed.glb"},
+    {"from": "output", "path": "extended.glb"},
+    {"from": "output", "path": "preview.png"},
+    {"from": "source", "path": "README.md"}
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "file": "print-files.zip",
+  "files": [
+    { "from": "output", "path": "model.glb" },
+    { "from": "output", "path": "preview.png" },
+    { "from": "source", "path": "README.md" }
+  ]
+}

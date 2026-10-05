@@ -1,0 +1,5 @@
+numpy==2.2.6
+Pillow==11.3.0
+trimesh==4.8.1
+scipy==1.16.1
+manifold3d==3.3.2

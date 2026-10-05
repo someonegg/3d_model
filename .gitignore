@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+.playwright-cli/
+.ruff_cache/
+.venv/
+
+build/
+dist/
+tmp/

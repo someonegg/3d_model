@@ -1,0 +1,29 @@
+{
+  "id": "star-chain-fdm",
+  "name": "星链伸缩杖 · FDM",
+  "description": "圆钝四角星形头与六节伸缩链条；收拢成杆、拉开后可单平面弯曲，全 PLA 分件装配",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {"id": "closed", "name": "收拢状态 · 展示", "file": "closed.glb", "purpose": "display", "units": "m", "up": "Y"},
+    {"id": "extended", "name": "展开弯曲 · 展示", "file": "extended.glb", "purpose": "display", "units": "m", "up": "Y"},
+    {"id": "all-parts", "name": "全套 31 件 · 打印排版", "file": "all-parts.stl"},
+    {"id": "link-base", "name": "普通链节底座 · 单件", "file": "link-base.stl"},
+    {"id": "terminal-base", "name": "末节底座 · 单件", "file": "terminal-base.stl"},
+    {"id": "link-lid", "name": "普通盖板 · 单件", "file": "link-lid.stl"},
+    {"id": "terminal-lid", "name": "末节盖板 · 单件", "file": "terminal-lid.stl"},
+    {"id": "slider", "name": "连接片 · 单件", "file": "slider.stl"},
+    {"id": "lock-pin", "name": "锁销／头部转轴 · 单件", "file": "lock-pin.stl"},
+    {"id": "star-head", "name": "圆钝四角星形头 · 单件", "file": "star-head.stl"}
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "verify": "src/verify.py",
+  "inputs": ["src/build.py", "src/geometry.py", "src/verify.py", "parameters.json"],
+  "artifacts": ["geometry.json", "detail-validation.json"],
+  "bundle": "bundle.json",
+  "publish": ["print-files.zip"],
+  "depends_on": []
+}

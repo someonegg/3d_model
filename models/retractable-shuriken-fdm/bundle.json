@@ -1,0 +1,17 @@
+{
+  "file": "print-files.zip",
+  "files": [
+    { "from": "source", "path": "README.md" },
+    { "from": "output", "path": "all-parts.stl" },
+    { "from": "output", "path": "base.stl" },
+    { "from": "output", "path": "wing.stl" },
+    { "from": "output", "path": "rotor.stl" },
+    { "from": "output", "path": "lid.stl" },
+    { "from": "output", "path": "expanded.glb" },
+    { "from": "output", "path": "closed.glb" },
+    { "from": "output", "path": "assembly.glb" },
+    { "from": "output", "path": "preview.png" },
+    { "from": "output", "path": "closed.png" },
+    { "from": "output", "path": "exploded.png" }
+  ]
+}

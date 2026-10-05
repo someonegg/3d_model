@@ -1,0 +1,40 @@
+# 萨卡加维亚硬币 · FDM
+
+60 mm 装饰性浅浮雕，参考萨卡加维亚硬币的人物、背婴与鹰构图。为 0.4 mm 喷嘴和 0.12 mm 层高简化细节，提供两个平背半片。
+
+## 下载
+
+| 文件 | 最终尺寸（mm） |
+| --- | --- |
+| [coin-sacagawea-fdm-obverse.stl](coin-sacagawea-fdm-obverse.stl) | 60 × 60 × 3.55 |
+| [coin-sacagawea-fdm-reverse.stl](coin-sacagawea-fdm-reverse.stl) | 60 × 60 × 3.55 |
+
+STL 单位 mm，保持 100% 比例；缩小会增加细节打印难度。
+
+## 打印
+
+两个半片均平背贴热床、浮雕朝上，无需支撑。P2S、0.4 mm 喷嘴、PLA、Arachne 墙生成器；首层和其余层高均为 **0.12 mm**，3 圈墙、20% 陀螺填充，关闭熨烫及裙边。
+
+## 装配与使用
+
+1. 两片背靠背干摆，**背面图案顶部对准正面底部**。
+2. 从正面绕水平轴翻到背面，确认两面均能正向观看。
+3. 保持方向，在平背涂少量塑料适用胶并合拢。两片总厚约 7.10 mm，胶层会增加厚度。
+
+## 核心参数
+
+参数来源：`src/relief.py`。
+
+| 参数 | 当前值 | 作用 |
+| --- | --- | --- |
+| `RADIUS` | 30 mm | 半径，对应直径 60 mm。 |
+| `BASE` / `BACKGROUND` | 2.04 / 0.12 mm | 基础底厚与背景抬高，平背景顶面为 2.16 mm。 |
+| 文字 / 边缘抬高 | 0.72 / 0.96 mm | 相对背景的造型高度，写在 `lettering()` / `surface()` 中。 |
+
+修改参数后须从源码重建，并核对打印层高与最终厚度。
+
+## 验证状态
+
+通用几何校验通过；实物试打未记录。预览颜色仅作示意。
+
+参考：[美国铸币局设计资料](https://www.usmint.gov/learn/coins-and-medals/circulating-coins/sacagawea-golden-dollar)。

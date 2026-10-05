@@ -1,0 +1,58 @@
+{
+  "id": "retractable-shuriken-fdm",
+  "name": "伸缩手里剑玩具 · FDM",
+  "description": "旋转约 60°，四个圆钝翼同步伸缩；全 PLA 七件、无五金，展开 102 mm；待实物验证的原型",
+  "purpose": "print",
+  "units": "mm",
+  "up": "Z",
+  "variants": [
+    {
+      "id": "expanded",
+      "name": "展开 · 装配展示",
+      "file": "expanded.glb",
+      "purpose": "display",
+      "units": "m",
+      "up": "Y"
+    },
+    {
+      "id": "closed",
+      "name": "收拢 · 装配展示",
+      "file": "closed.glb",
+      "purpose": "display",
+      "units": "m",
+      "up": "Y"
+    },
+    {
+      "id": "all-parts",
+      "name": "全部七件 · 打印排版",
+      "file": "all-parts.stl"
+    },
+    { "id": "base", "name": "底座", "file": "base.stl" },
+    { "id": "wing", "name": "圆钝滑翼 · 需打印四件", "file": "wing.stl" },
+    { "id": "rotor", "name": "联动转盘", "file": "rotor.stl" },
+    { "id": "lid", "name": "可拆上盖", "file": "lid.stl" }
+  ],
+  "preview": "preview.png",
+  "readme": "README.md",
+  "build": "src/build.py",
+  "verify": "src/verify.py",
+  "inputs": [
+    "parameters.json",
+    "src/build.py",
+    "src/geometry.py",
+    "src/assembly.py",
+    "src/preview.py",
+    "src/verify.py",
+    "../../tools/assembly_gltf.py"
+  ],
+  "artifacts": [
+    "closed.png",
+    "exploded.png",
+    "assembly.json",
+    "detail-validation.json",
+    "assembly.glb"
+  ],
+  "publish": ["closed.png", "exploded.png", "assembly.glb", "print-files.zip"],
+  "bundle": "bundle.json",
+  "assembly": "assembly.glb"
+}
