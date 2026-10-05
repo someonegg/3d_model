@@ -1,0 +1,4 @@
+prefix_rule(
+    pattern = ["tools/slice-model.sh"],
+    decision = "allow",
+)

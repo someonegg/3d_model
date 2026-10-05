@@ -1,0 +1,29 @@
+{
+  "process": "0.16mm Standard @BBL P2S",
+  "filament": "Bambu PLA Basic @BBL P2S",
+  "overrides": {
+    "layer_height": "0.16",
+    "initial_layer_print_height": "0.2",
+    "wall_loops": "4",
+    "sparse_infill_density": "15%",
+    "enable_support": "1",
+    "support_type": "tree(auto)",
+    "support_on_build_plate_only": "0",
+    "support_threshold_angle": "30",
+    "support_top_z_distance": "0.2",
+    "support_object_xy_distance": "0.35",
+    "brim_type": "auto_brim",
+    "brim_width": "3",
+    "outer_wall_speed": [
+      "50",
+      "50",
+      "50"
+    ]
+  },
+  "arrange": 0,
+  "expected": {
+    "layer_height": "0.16",
+    "wall_loops": "4",
+    "enable_support": "1"
+  }
+}

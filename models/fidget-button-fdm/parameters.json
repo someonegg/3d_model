@@ -1,0 +1,29 @@
+{
+  "segments": 192,
+  "spring_thickness": 0.7,
+  "lock_interference": 0.1,
+  "plug_bump_height": 0.15,
+  "lock_width_deg": 24.0,
+  "guide_height": 4.9,
+  "guide_bore_radius": 14.1,
+  "guide_flat_x": 13.1,
+  "cap_flat_x": 12.8,
+  "dimensions": {
+    "travel": 3.0,
+    "protrusion": 4.0,
+    "shell_top_z": 17.0,
+    "arm_tip": 12.5,
+    "support_inner_radius": 14.25,
+    "arm_width": 2.4,
+    "root_fillet": 1.0,
+    "pad_x": 11.4,
+    "pad_y": 2.9,
+    "pad_size": 2.4,
+    "pad_length": 1.0,
+    "face_height": 6.5,
+    "skirt_height": 2.0,
+    "spring_seat_z": 8.64,
+    "stop_radius": 1.5,
+    "outer_radius": 21.0
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "diameter_mm": 60.0,
+  "base_mm": 2.04,
+  "background_mm": 0.12,
+  "pixels_per_mm": 20,
+  "rings": 250,
+  "sectors": 1440
+}

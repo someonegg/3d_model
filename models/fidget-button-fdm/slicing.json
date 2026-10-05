@@ -1,0 +1,27 @@
+{
+  "process": "0.16mm Standard @BBL P2S",
+  "filament": "Bambu PLA Tough+ @BBL P2S",
+  "overrides": {
+    "layer_height": "0.16",
+    "initial_layer_print_height": "0.2",
+    "wall_loops": "3",
+    "sparse_infill_density": "15%",
+    "bottom_shell_layers": "100",
+    "enable_support": "0",
+    "brim_type": "no_brim",
+    "wall_generator": "arachne",
+    "detect_thin_wall": "0"
+  },
+  "arrange": 1,
+  "expected": {
+    "layer_height": "0.16",
+    "initial_layer_print_height": "0.2",
+    "wall_loops": "3",
+    "sparse_infill_density": "15%",
+    "bottom_shell_layers": "100",
+    "enable_support": "0",
+    "brim_type": "no_brim",
+    "wall_generator": "arachne",
+    "detect_thin_wall": "0"
+  }
+}

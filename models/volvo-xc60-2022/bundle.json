@@ -1,0 +1,277 @@
+{
+  "file": "print-files.zip",
+  "files": [
+    {
+      "from": "source",
+      "path": "README.md"
+    },
+    {
+      "from": "output",
+      "path": "assembled.glb"
+    },
+    {
+      "from": "output",
+      "path": "doors-open.glb"
+    },
+    {
+      "from": "output",
+      "path": "doors-open.png"
+    },
+    {
+      "from": "output",
+      "path": "exploded.png"
+    },
+    {
+      "from": "output",
+      "path": "fit-coupon.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/axle-spacer-0-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/axle-spacer-0-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/axle-spacer-1-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/axle-spacer-1-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/body.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/bumper-vent-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/bumper-vent-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/chassis.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/dashboard.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/daylight-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/daylight-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/door-card-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/door-card-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/door-clip-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/door-clip-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/door-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/door-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/front-numberplate.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/glass-front-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/glass-front-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/glass-quarter-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/glass-quarter-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/glass-rear-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/glass-rear-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/grille-backing.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/grille-silver.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/headlamp-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/headlamp-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/hubcap-0-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/hubcap-0-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/hubcap-1-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/hubcap-1-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/interior.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/lower-intake.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/mirror-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/mirror-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/panoramic-roof.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/rear-numberplate.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/rear-window.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/rim-0-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/rim-0-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/rim-1-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/rim-1-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/roof-rail-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/roof-rail-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/tail-lamp-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/tail-lamp-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/tyre-0-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/tyre-0-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/tyre-1-left.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/tyre-1-right.stl"
+    },
+    {
+      "from": "output",
+      "path": "parts/windshield.stl"
+    },
+    {
+      "from": "output",
+      "path": "plate-black-1.stl"
+    },
+    {
+      "from": "output",
+      "path": "plate-interior-1.stl"
+    },
+    {
+      "from": "output",
+      "path": "plate-light-1.stl"
+    },
+    {
+      "from": "output",
+      "path": "plate-red-1.stl"
+    },
+    {
+      "from": "output",
+      "path": "plate-silver-1.stl"
+    },
+    {
+      "from": "output",
+      "path": "plate-white-1.stl"
+    },
+    {
+      "from": "output",
+      "path": "preview.png"
+    },
+    {
+      "from": "output",
+      "path": "rear.png"
+    },
+    {
+      "from": "source",
+      "path": "references.md"
+    },
+    {
+      "from": "output",
+      "path": "assembly.glb"
+    }
+  ]
+}

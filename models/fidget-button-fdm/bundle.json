@@ -1,0 +1,25 @@
+{
+  "file": "print-files.zip",
+  "files": [
+    {
+      "from": "source",
+      "path": "README.md"
+    },
+    {
+      "from": "output",
+      "path": "fidget-button-fdm.stl"
+    },
+    {
+      "from": "output",
+      "path": "fidget-button-fdm-spring.stl"
+    },
+    {
+      "from": "output",
+      "path": "fidget-button-fdm-cap.stl"
+    },
+    {
+      "from": "output",
+      "path": "preview.png"
+    }
+  ]
+}

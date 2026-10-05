@@ -1,0 +1,23 @@
+{
+  "tone_values": [
+    0,
+    25.5,
+    51,
+    76.5,
+    102,
+    127.5,
+    153,
+    178.5,
+    204,
+    229.5,
+    255
+  ],
+  "image_processing": {
+    "centering": [
+      0.55,
+      0.5
+    ],
+    "median_size": 3,
+    "gaussian_sigma": 1.1
+  }
+}

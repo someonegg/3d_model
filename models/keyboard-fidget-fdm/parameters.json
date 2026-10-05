@@ -1,0 +1,68 @@
+{
+  "dimensions": {
+    "body": 45.0,
+    "key": 24.0,
+    "travel": 3.0,
+    "guide_clearance": 0.2,
+    "guide_radius": 1.0,
+    "guide_relief": 0.4,
+    "guide_land": 3.0,
+    "guide_ramp": 0.6,
+    "guide_chamfer": 0.4,
+    "return_length": 30.0,
+    "return_width": 5.0,
+    "return_thickness": 1.0,
+    "preload": 0.15,
+    "click_length": 28.0,
+    "click_width": 1.6,
+    "click_thickness": 3.2,
+    "click_deflection": 0.5,
+    "click_root_radius": 1.6,
+    "frame_bottom": 6.2,
+    "frame_thickness": 3.2,
+    "roof_thickness": 2.8,
+    "return_root_y": -17.0,
+    "return_pad_y": 13.0,
+    "return_pad_depth": 2.0,
+    "screw_centers": [
+      [
+        20.0,
+        20.0
+      ],
+      [
+        -20.0,
+        -20.0
+      ]
+    ],
+    "boss_radius": 2.2,
+    "pilot_radius": 0.85,
+    "clearance_radius": 1.2,
+    "countersink_radius": 2.3,
+    "head_recess": 0.2,
+    "screw_length": 8.0,
+    "support_top": 6.0,
+    "support_gap": 0.2,
+    "click_side_travel": 0.5,
+    "frame_offset": 0.1,
+    "side_wall": 1.8,
+    "end_wall": 1.6,
+    "frame_half": 19.5,
+    "snap_x": 20.05,
+    "snap_stem_half": 3.8,
+    "snap_head_half": 4.2,
+    "snap_slot_half": 4.0,
+    "snap_pocket_half": 4.4,
+    "snap_start": 12.4,
+    "snap_peak": 13.4,
+    "snap_top": 14.4,
+    "snap_transition_bottom": 12.8,
+    "snap_transition_top": 13.2,
+    "snap_blind_top": 14.8,
+    "click_x": 15.2,
+    "click_shift": 0.8
+  },
+  "resolution": {
+    "rounded_profile_segments": 24,
+    "cylinder_segments": 64
+  }
+}
