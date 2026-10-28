@@ -14,7 +14,7 @@ export default defineConfig({
   timeout: 60000,
   workers: 1,
   use: {
-    baseURL: "http://127.0.0.1:4273",
+    baseURL: "http://127.0.0.1:14273",
     headless: true,
     screenshot: "only-on-failure",
     trace: "retain-on-failure",
@@ -22,14 +22,14 @@ export default defineConfig({
   },
   webServer: [
     {
-      command: "npm run preview -- --port 4273 --strictPort",
-      url: "http://127.0.0.1:4273",
+      command: "npm run preview -- --port 14273 --strictPort",
+      url: "http://127.0.0.1:14273",
       reuseExistingServer: false,
     },
     {
       command:
-        "npm run dev -- --library-root tmp/fixtures --port 5273 --strictPort",
-      url: "http://127.0.0.1:5273",
+        "npm run dev -- --library-root tmp/fixtures --port 15273 --strictPort",
+      url: "http://127.0.0.1:15273",
       reuseExistingServer: false,
     },
   ],

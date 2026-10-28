@@ -217,7 +217,7 @@ const safe = true;
   await expect(page.locator("#markdown pre")).toContainText("const safe");
   await expect(page.getByRole("link", { name: "相对链接" })).toHaveAttribute(
     "href",
-    "http://127.0.0.1:4273/models/markdown-fixture/guide.pdf",
+    "http://127.0.0.1:14273/models/markdown-fixture/guide.pdf",
   );
   await expect(page.getByRole("link", { name: "外部链接" })).toHaveAttribute(
     "target",
@@ -229,14 +229,14 @@ const safe = true;
   );
   await expect(page.getByAltText("预览")).toHaveAttribute(
     "src",
-    "http://127.0.0.1:4273/models/markdown-fixture/docs/images/preview.png",
+    "http://127.0.0.1:14273/models/markdown-fixture/docs/images/preview.png",
   );
   await expect(page.locator("#markdown script")).toHaveCount(0);
   await expect(page.locator("#markdown [onerror]")).toHaveCount(0);
   await expect(page.locator('#markdown a[href^="javascript:"]')).toHaveCount(0);
   await expect(page.getByRole("link", { name: "查看原文" })).toHaveAttribute(
     "href",
-    "http://127.0.0.1:4273/models/markdown-fixture/docs/README.md",
+    "http://127.0.0.1:14273/models/markdown-fixture/docs/README.md",
   );
   await expect(page.getByRole("link", { name: "返回模型工作台" })).toHaveCount(
     0,

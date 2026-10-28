@@ -15,7 +15,7 @@ test.beforeEach(async ({ page }) => {
     </div>`,
     }),
   );
-  await page.goto("http://127.0.0.1:5273/assembly-test.html");
+  await page.goto("http://127.0.0.1:15273/assembly-test.html");
 });
 
 test("播放器按真实时间推进、只在步骤变化时更新外观并独立释放资源", async ({

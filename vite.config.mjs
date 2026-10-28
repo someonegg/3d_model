@@ -13,9 +13,13 @@ export default defineConfig({
     include: ["three/addons/loaders/STLLoader.js"],
   },
   server: {
+    port: 5173,
     watch: {
       ignored: ["**/__pycache__/**"],
     },
+  },
+  preview: {
+    port: 5173,
   },
   build: {
     outDir: "../tmp/site",

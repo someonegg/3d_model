@@ -11,7 +11,7 @@ import path from "node:path";
 import { repoRoot, runPython } from "../../tools/runtime.mjs";
 
 test("本地自动发现、校验过期与移除", async ({ page }) => {
-  await page.goto("http://127.0.0.1:5273/");
+  await page.goto("http://127.0.0.1:15273/");
   await expect(page.locator("#status")).toContainText("模型库为空");
   const directory = await mkdtemp(
     path.join(repoRoot, "tmp/fixtures/models/viewer-test-"),
@@ -77,12 +77,12 @@ for name in ["model.glb", "preview.png", "details.json"]:
     await expect(page.locator("#status")).toBeEmpty({ timeout: 30000 });
     await expect(page.locator("#validation")).toContainText("校验通过");
     const details = await page.request.get(
-      `http://127.0.0.1:5273/models/${id}/details.json`,
+      `http://127.0.0.1:15273/models/${id}/details.json`,
     );
     expect(details.status()).toBe(404);
     expect(
       (
-        await page.request.get(`http://127.0.0.1:5273/models/${id}/model.json`)
+        await page.request.get(`http://127.0.0.1:15273/models/${id}/model.json`)
       ).status(),
     ).toBe(404);
     const output = path.join(repoRoot, "tmp/fixtures/build/models", id);
@@ -91,7 +91,7 @@ for name in ["model.glb", "preview.png", "details.json"]:
     await writeFile(path.join(directory, "notes.md"), "更新独立说明");
     await expect(page.locator("#validation")).toContainText("待重新校验");
     const previousReadme = await page.request.get(
-      `http://127.0.0.1:5273/models/${id}/README.md`,
+      `http://127.0.0.1:15273/models/${id}/README.md`,
     );
     expect(await previousReadme.text()).toBe("# 测试模型");
     await runPython([
@@ -110,7 +110,7 @@ for name in ["model.glb", "preview.png", "details.json"]:
       ["notes.md", "更新独立说明"],
     ]) {
       const response = await page.request.get(
-        `http://127.0.0.1:5273/models/${id}/${name}`,
+        `http://127.0.0.1:15273/models/${id}/${name}`,
       );
       expect(await response.text()).toBe(text);
     }
@@ -297,7 +297,7 @@ shutil.copy2('preview.png', out / 'preview.png')
       }),
     );
     await build();
-    await page.goto(`http://127.0.0.1:5273/?model=${id}`);
+    await page.goto(`http://127.0.0.1:15273/?model=${id}`);
     await expect(page.locator("#status")).toBeEmpty();
     await expect(page.locator("#variants")).toHaveValue("closed");
     await expect(page.locator("#metrics")).toContainText(
@@ -395,7 +395,7 @@ for name in ["model.glb", "preview.png"]:
       ]);
     await rebuild();
     const geometry = await readFile(path.join(output, "validation.json"));
-    await page.goto(`http://127.0.0.1:5273/?model=${id}`);
+    await page.goto(`http://127.0.0.1:15273/?model=${id}`);
     await expect(page.locator("#validation")).toContainText("校验通过");
     await writeFile(path.join(directory, "notes.md"), "更新后的参考说明");
     await expect(page.locator("#validation")).toContainText("待重新校验");
@@ -405,7 +405,7 @@ for name in ["model.glb", "preview.png"]:
       (await readFile(path.join(output, "validation.json"))).equals(geometry),
     ).toBeTruthy();
     const notes = await page.request.get(
-      `http://127.0.0.1:5273/models/${id}/notes.md`,
+      `http://127.0.0.1:15273/models/${id}/notes.md`,
     );
     expect(await notes.text()).toBe("更新后的参考说明");
     bundle.files.reverse();
